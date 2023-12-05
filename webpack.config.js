@@ -11,7 +11,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Restaurant',
-            template: 'src/template.html',
+            template: './src/template.html',
+            filename: 'index.html',
+            showErrors: true,
         }),
     ],
     output: {
