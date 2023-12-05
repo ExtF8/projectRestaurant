@@ -1,0 +1,88 @@
+:root {
+    --primary: #ff6a3e;
+    --primaryLight: #ffba43;
+    --secondary: #ffba43;
+    --secondaryLight: #ffba43;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #4e4b66;
+    --bodyTextColorWhite: #fafbfc;
+    --footerTextColorGray: #8c8c8c;
+    /* 13px - 16px */
+    --topperFontSize: clamp(1.5rem, 1.6vw, 2rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(2.5rem, 3.9vw, 4rem);
+    --bodyFontSize: 1.2rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3rem, 7vw, 1rem) 1rem;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+}
+
+*,
+*:before,
+*:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+}
+
+.header-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    max-width: 60rem;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    position: relative;
+}
+
+.card-group-title {
+    font-size: var(--topperFontSize);
+    line-height: 1.2em;
+    text-transform: uppercase;
+    text-align: inherit;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: -1em;
+    display: block;
+    align-self: start;
+}
+
+
+.title-text {
+    font-size: var(--bodyFontSize);
+    line-height: 1.5em;
+    text-align: inherit;
+    width: 100%;
+    max-width: 44rem;
+    margin: 0;
+    color: var(--bodyTextColor);
+}
+
+footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+footer>div>p:first-child,
+footer>div>a:link, footer>div>a:visited {
+    text-decoration: none;
+    color: var(--footerTextColorGray);
+}
+
+footer>div>a:hover {
+    color: var(--bodyTextColor);
+}
