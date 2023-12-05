@@ -1,29 +1,84 @@
-import './styles/global.css'
-import './styles/main.css'
+import './styles/global.css';
+import './styles/main.css';
 
-const element = document.getElementById('content');
+// add classes for mobile navigation toggling
+var CSbody = document.querySelector('body');
+const CSnavbarMenu = document.querySelector('#cs-navigation');
+const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
-const element1 = document.createElement('div');
-const element2 = document.createElement('div');
-const element3 = document.createElement('div');
-const element4 = document.createElement('div');
-const body = document.getElementsByTagName('body')
+CShamburgerMenu.addEventListener('click', function () {
+    CShamburgerMenu.classList.toggle('cs-active');
+    CSnavbarMenu.classList.toggle('cs-active');
+    CSbody.classList.toggle('cs-open');
+    // run the function to check the aria-expanded value
+    ariaExpanded();
+});
 
+// checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+function ariaExpanded() {
+    const csUL = document.querySelector('#cs-expanded');
+    const csExpanded = csUL.getAttribute('aria-expanded');
 
-element2.classList.add('content');
-
-element1.innerText = 'test1';
-element2.innerText = 'test2';
-element3.innerText = 'test3';
-element4.innerText = 'test4';
-
-const array = [element1, element2, element3, element4];
-
-for (let i = 0; i < array.length; i++) {
-    element.appendChild(array[i]);
+    if (csExpanded === 'false') {
+        csUL.setAttribute('aria-expanded', 'true');
+    } else {
+        csUL.setAttribute('aria-expanded', 'false');
+    }
 }
 
-element2.classList.add('title-text')
-element1.classList.add('header-title')
-element3.classList.add('card-group-item')
-body.classList.add('body')
+// mobile nav toggle code
+const dropDowns = Array.from(
+    document.querySelectorAll('#cs-navigation .cs-dropdown')
+);
+for (const item of dropDowns) {
+    const onClick = () => {
+        item.classList.toggle('cs-active');
+    };
+    item.addEventListener('click', onClick);
+}
+
+//
+//    The Dark Mode System
+//
+
+// helper functions to toggle dark mode
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('theme', 'dark');
+}
+function disableDarkMode() {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('theme', 'light');
+}
+
+// determines a new users dark mode preferences
+function detectColorScheme() {
+    // default to the light theme
+    let theme = 'light' || 'dark';
+
+    // check localStorage for a saved 'theme' variable. if it's there, the user has visited before, so apply the necessary theme choices
+    if (localStorage.getItem('theme')) {
+        theme = localStorage.getItem('theme');
+    }
+    // if it's not there, check to see if the user has applied dark mode preferences themselves in the browser
+    else if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+        theme = 'dark';
+    }
+
+    // if there is no preference set, the default of light will be used. apply accordingly
+    theme === 'dark' ? enableDarkMode() : disableDarkMode();
+}
+
+// run on page load
+detectColorScheme();
+
+// add event listener to the dark mode button toggle
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+    // on click, check localStorage for the dark mode value, use to apply the opposite of what's saved
+    localStorage.getItem('theme') === 'light'
+        ? enableDarkMode()
+        : disableDarkMode();
+});

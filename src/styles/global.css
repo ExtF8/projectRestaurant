@@ -1,4 +1,5 @@
 :root {
+    /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     --primary: #ff6a3e;
     --primaryLight: #ffba43;
     --secondary: #ffba43;
@@ -6,83 +7,160 @@
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
-    --footerTextColorGray: #8c8c8c;
     /* 13px - 16px */
-    --topperFontSize: clamp(1.5rem, 1.6vw, 2rem);
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
-    --headerFontSize: clamp(2.5rem, 3.9vw, 4rem);
-    --bodyFontSize: 1.2rem;
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
     /* 60px - 100px top and bottom */
-    --sectionPadding: clamp(3rem, 7vw, 1rem) 1rem;
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 }
 
 body {
-    font-family: 'Roboto', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
-    width: 100%;
-}
-
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
 }
-
-.header-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
+.cs-topper {
+    font-size: var(--topperFontSize);
     line-height: 1.2em;
     text-transform: uppercase;
     text-align: inherit;
-    max-width: 60rem;
+    letter-spacing: .1em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.cs-title {
+    font-size: var(--headerFontSize);
+    font-weight: 900;
+    line-height: 1.2em;
+    text-align: inherit;
+    max-width: 43.75rem;
     margin: 0 0 1rem 0;
     color: var(--headerColor);
     position: relative;
 }
 
-.card-group-title {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: -1em;
-    display: block;
-    align-self: start;
-}
-
-
-.title-text {
+.cs-text {
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
     text-align: inherit;
     width: 100%;
-    max-width: 44rem;
+    max-width: 40.625rem;
     margin: 0;
     color: var(--bodyTextColor);
 }
 
-footer {
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-}
-
-footer>div>p:first-child,
-footer>div>a:link, footer>div>a:visited {
-    text-decoration: none;
-    color: var(--footerTextColorGray);
-}
-
-footer>div>a:hover {
-    color: var(--bodyTextColor);
-}
+/* Add this as it's own dark.css file and linked on all pages */
+/*-- -------------------------- -->
+<---      Core Dark Styles      -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    :root {
+      --dark: #082032;
+      --medium: #2c394b;
+      --accent: #334756;
+      --bodyTextColorWhite: #fafbfc;
+    }
+    body.dark-mode {
+      background-color: var(--dark);
+    }
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6,
+    body.dark-mode .cs-title,
+    body.dark-mode .cs-text,
+    body.dark-mode .cs-li {
+      color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode .light {
+      display: none;
+    }
+    body.dark-mode .dark {
+      display: block !important;
+    }
+    .dark {
+      /* class used to hide elements that only need to be seen when dark mode is enabled */
+      display: none;
+    }
+  }
+  /*-- -------------------------- -->
+  <---      Dark Mode Toggle      -->
+  <--- -------------------------- -*/
+  /* Mobile */
+  @media only screen and (min-width: 0rem) {
+    body.dark-mode #dark-mode-toggle .cs-sun {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+    body.dark-mode #dark-mode-toggle .cs-moon {
+      transform: translate(-50%, -150%);
+      opacity: 0;
+    }
+    #dark-mode-toggle {
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 3.75rem;
+      width: 3rem;
+      height: 3rem;
+      background: transparent;
+      border: none;
+      overflow: hidden;
+      padding: 0;
+    }
+    #dark-mode-toggle img,
+    #dark-mode-toggle svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.5625rem;
+      height: 1.5625rem;
+      pointer-events: none;
+    }
+    #dark-mode-toggle .cs-moon {
+      z-index: 2;
+      transition: transform 0.3s,
+                  opacity 0.3s,
+                  fill 0.3s;
+      fill: #000;
+    }
+    #dark-mode-toggle .cs-sun {
+      z-index: 1;
+      transform: translate(-50%, 100%);
+      opacity: 0;
+      transition: transform 0.3s,
+                  opacity 0.3s;
+    }
+  }
+  /* Desktop */
+  @media only screen and (min-width: 64rem) {
+    #dark-mode-toggle {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+      margin-left: 1.875rem;
+      margin-bottom: 0rem;
+    }
+    #dark-mode-toggle .moon {
+      /* change to whatever you need */
+      fill: #fff;
+    }
+  }
+                                  
