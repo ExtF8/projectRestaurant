@@ -23,6 +23,21 @@ body {
     height: auto;
 }
 
+#content {
+    position: relative; 
+    min-height: 100vh;
+    padding-bottom: 200px;
+}
+
+footer {
+    position: absolute;
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    font-family: inherit;
+    /* height: 1rem; */
+}
+
 *,
 *:before,
 *:after {
@@ -68,3 +83,4 @@ body {
     text-decoration: none;
     color: var(--headerColorMedium);
 }
+
