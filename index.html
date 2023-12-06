@@ -6,78 +6,206 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
     <body>
-        <header id="cs-navigation">
-            <div class="cs-container">
-                <!--Nav Logo-->
-                <a href="" class="page-title" aria-label="back to home">
-                    <h1>Got food?</h1>
-                </a>
-                <!--Navigation List-->
-                <nav class="cs-nav" role="navigation">
-                    <!--Mobile Nav Toggle-->
-                    <button class="cs-toggle" aria-label="mobile menu toggle">
-                        <div class="cs-box" aria-hidden="true">
-                            <span
-                                class="cs-line cs-line1"
-                                aria-hidden="true"
-                            ></span>
-                            <span
-                                class="cs-line cs-line2"
-                                aria-hidden="true"
-                            ></span>
-                            <span
-                                class="cs-line cs-line3"
-                                aria-hidden="true"
-                            ></span>
-                        </div>
-                    </button>
-
-                    <div class="cs-ul-wrapper">
-                        <ul
-                            id="cs-expanded"
-                            class="cs-ul"
-                            aria-expanded="false"
-                        >
-                            <li class="cs-li">
-                                <a href="" class="cs-li-link cs-active">Home</a>
-                            </li>
-                            <li class="cs-li">
-                                <a href="" class="cs-li-link">Menu</a>
-                            </li>
-                            <li class="cs-li">
-                                <a href="" class="cs-li-link">Contacts</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
-                <button id="dark-mode-toggle" aria-label="dark mode toggle">
-                    <svg
-                        class="cs-moon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 480 480"
-                        style="enable-background: new 0 0 480 480"
-                        xml:space="preserve"
-                    >
-                        <path
-                            d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"
-                        />
-                    </svg>
-                    <img
-                        class="cs-sun"
-                        aria-hidden="true"
-                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg"
-                        decoding="async"
-                        alt="moon"
-                        width="15"
-                        height="15"
-                    />
-                </button>
-            </div>
-        </header>
-
         <div id="content">
-  
+            <header id="cs-navigation">
+                <div class="cs-container">
+                    <!--Nav Logo-->
+                    <a href="" class="page-title" aria-label="back to home">
+                        <h1>Got food?</h1>
+                    </a>
+                    <!--Navigation List-->
+                    <nav class="cs-nav" role="navigation">
+                        <!--Mobile Nav Toggle-->
+                        <button
+                            class="cs-toggle"
+                            aria-label="mobile menu toggle"
+                        >
+                            <div class="cs-box" aria-hidden="true">
+                                <span
+                                    class="cs-line cs-line1"
+                                    aria-hidden="true"
+                                ></span>
+                                <span
+                                    class="cs-line cs-line2"
+                                    aria-hidden="true"
+                                ></span>
+                                <span
+                                    class="cs-line cs-line3"
+                                    aria-hidden="true"
+                                ></span>
+                            </div>
+                        </button>
+
+                        <div class="cs-ul-wrapper">
+                            <ul
+                                id="cs-expanded"
+                                class="cs-ul"
+                                aria-expanded="false"
+                            >
+                                <li class="cs-li">
+                                    <a href="" class="cs-li-link cs-active"
+                                        >Home</a
+                                    >
+                                </li>
+                                <li class="cs-li">
+                                    <a href="" class="cs-li-link">Menu</a>
+                                </li>
+                                <li class="cs-li">
+                                    <a href="" class="cs-li-link">Contacts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
+                    <button id="dark-mode-toggle" aria-label="dark mode toggle">
+                        <svg
+                            class="cs-moon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 480 480"
+                            style="enable-background: new 0 0 480 480"
+                            xml:space="preserve"
+                        >
+                            <path
+                                d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"
+                            />
+                        </svg>
+                        <img
+                            class="cs-sun"
+                            aria-hidden="true"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsun.svg"
+                            decoding="async"
+                            alt="moon"
+                            width="15"
+                            height="15"
+                        />
+                    </button>
+                </div>
+            </header>
+            <main id="main-content">
+                <section id="home-content">
+                    <div class="cs-container">
+                        <div class="cs-content">
+                            <span class="cs-topper">Do you like food?</span>
+                            <h2 class="cs-title">
+                                Accessible Food That Anyone Can Eat
+                            </h2>
+                            <p class="cs-text">
+                                Immerse yourself in the tantalizing world of
+                                gourmet dining at "Savor's Catch," a vibrant and
+                                electrifying restaurant brand crafted
+                                specifically for those who relish the thrill of
+                                culinary excellence. For avid food enthusiasts
+                                who feel their taste buds awaken at the first
+                                hint of exquisite flavors, "Savor's Catch"
+                                embodies the essence of that exhilarating moment
+                                when a perfectly prepared dish and a discerning
+                                diner engage in a delightful interplay of taste
+                                and craftsmanship.
+                            </p>
+                            <picture class="cs-picture cs-picture-right">
+                                <!--Mobile Image-->
+                                <source
+                                    media="(max-width: 600px)"
+                                    srcset="7aae6a15ce7d1a7a24e7.png"
+                                />
+                                <!--Tablet and above Image-->
+                                <source
+                                    media="(min-width: 601px)"
+                                    srcset="7aae6a15ce7d1a7a24e7.png"
+                                />
+                                <!-- For local run -->
+                                <!-- src="../dist/7aae6a15ce7d1a7a24e7.png" -->
+                                <!-- For dev dev srv run -->
+                                <!-- src="7aae6a15ce7d1a7a24e7.png" -->
+                                <img
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="7aae6a15ce7d1a7a24e7.png"
+                                    alt="people"
+                                    width="608"
+                                    height="662"
+                                />
+                            </picture>
+                        </div>
+                        <div class="cs-stats-group">
+                            <picture class="cs-picture cs-picture-left">
+                                <!--Mobile Image-->
+                                <source
+                                    media="(max-width: 600px)"
+                                    srcset="74d0a0d0d5ba4c16fab5.png"
+                                />
+                                <!--Tablet and above Image-->
+                                <source
+                                    media="(min-width: 601px)"
+                                    srcset="74d0a0d0d5ba4c16fab5.png"
+                                />
+                                <img
+                                    loading="lazy"
+                                    decoding="async"
+                                    src="74d0a0d0d5ba4c16fab5.png"
+                                    alt="people"
+                                    width="608"
+                                    height="406"
+                                />
+                            </picture>
+                            <ul class="cs-stats">
+                                <li class="cs-stat">
+                                    <span class="cs-number">99%</span>
+                                    <span class="cs-desc"
+                                        >Positive customer reviews</span
+                                    >
+                                </li>
+                                <li class="cs-stat">
+                                    <span class="cs-number">10</span>
+                                    <span class="cs-desc"
+                                        >Dish 'Try Again' Special</span
+                                    >
+                                </li>
+                                <li class="cs-stat">
+                                    <span class="cs-number">24/7</span>
+                                    <span class="cs-desc"
+                                        >Online reservation and inquiry
+                                        service</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- ============================================ -->
+            <!--                   Footer                     -->
+            <!-- ============================================ -->
+
+            <footer id="cs-footer-108">
+                <div class="cs-container">
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            <a
+                                href="https://github.com/ExtF8"
+                                target="_blank"
+                                class="cs-link"
+                                >Who Made This Web Page</a
+                            >
+                        </li>
+                        <li class="cs-li">
+                            <a
+                                href="https://www.theodinproject.com/lessons/node-path-javascript-restaurant-page"
+                                target="_blank"
+                                class="cs-link"
+                                >And Why</a
+                            >
+                        </li>
+                        <li class="cs-li">
+                            <a href="" target="_top" class="cs-link"
+                                >Three looks better than two</a
+                            >
+                        </li>
+                    </ul>
+                    <span class="cs-copyright">© 2023 Copyright</span>
+                </div>
+            </footer>
         </div>
     </body>
 </html>
