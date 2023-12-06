@@ -60,7 +60,7 @@
     #dark-mode-toggle {
         display: block;
         position: absolute;
-        top: 50%;
+        top: 6%;
         transform: translateY(-50%);
         right: 3.75rem;
         width: 3rem;
@@ -108,6 +108,9 @@
         transform: none;
         margin-left: 1.875rem;
         margin-bottom: 0rem;
+    }
+    #dark-mode-toggle:hover {
+        cursor: pointer;
     }
 
     #dark-mode-toggle .moon {

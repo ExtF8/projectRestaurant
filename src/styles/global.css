@@ -4,6 +4,8 @@
     --secondary: #ffba43;
     --secondaryLight: #ffba43;
     --headerColor: #1a1a1a;
+    --headerColorDark: #082032;
+    --headerColorMedium: #2c394b;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
     /* 13px - 16px */
@@ -18,6 +20,7 @@
 body {
     margin: 0;
     padding: 0;
+    height: auto;
 }
 
 *,
@@ -60,6 +63,8 @@ body {
     color: var(--bodyTextColor);
 }
 
-#cs-navigation .page-title {
+#cs-navigation .page-title,
+#cs-navigation>.page-title:visited {
     text-decoration: none;
+    color: var(--headerColorMedium);
 }

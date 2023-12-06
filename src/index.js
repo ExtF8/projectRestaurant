@@ -1,6 +1,8 @@
 import './styles/global.css';
 import './styles/main.css';
 import './styles/dark.css'
+import homePageLeft from './assets/img/homePageLeft.png';
+import homePageRight from './assets/img/homePageRight.png';
 
 // add classes for mobile navigation toggling
 var CSbody = document.querySelector('body');
