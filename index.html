@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Restaurant</title>
+        <title>Savor's Catch</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
     <body>
@@ -13,15 +13,8 @@
         <header id="cs-navigation">
             <div class="cs-container">
                 <!--Nav Logo-->
-                <a href="" class="cs-logo" aria-label="back to home">
-                    <img
-                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Flogo-black.svg"
-                        alt="logo"
-                        width="210"
-                        height="29"
-                        aria-hidden="true"
-                        decoding="async"
-                    />
+                <a href="" class="page-title" aria-label="back to home">
+                    <h1>Got food?</h1>
                 </a>
                 <!--Navigation List-->
                 <nav class="cs-nav" role="navigation">
@@ -42,7 +35,7 @@
                             ></span>
                         </div>
                     </button>
-                    <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+
                     <div class="cs-ul-wrapper">
                         <ul
                             id="cs-expanded"
@@ -55,21 +48,14 @@
                                 </a>
                             </li>
                             <li class="cs-li">
-                                <a href="" class="cs-li-link"> About </a>
+                                <a href="" class="cs-li-link"> Menu </a>
                             </li>
                             <li class="cs-li">
-                                <a href="" class="cs-li-link"> Services </a>
-                            </li>
-                            <li class="cs-li">
-                                <a href="" class="cs-li-link"> About Us </a>
-                            </li>
-                            <li class="cs-li">
-                                <a href="" class="cs-li-link"> FAQ </a>
+                                <a href="" class="cs-li-link"> Contacts </a>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <a href="" class="cs-button-solid cs-nav-button">Contact Us</a>
                 <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
                 <button id="dark-mode-toggle" aria-label="dark mode toggle">
                     <svg
@@ -96,6 +82,96 @@
             </div>
         </header>
 
-        <div id="content"></div>
+        <div id="content">
+            <!-- ============================================ -->
+            <!--            Side By Side Reverse              -->
+            <!-- ============================================ -->
+
+            <section id="home-content">
+                <div class="cs-container">
+                    <div class="cs-content">
+                        <span class="cs-topper">Do you like food?</span>
+                        <h2 class="cs-title">
+                            Accessible Food That Anyone Can Eat
+                        </h2>
+                        <p class="cs-text">
+                            Immerse yourself in the tantalizing world of gourmet
+                            dining at "Savor's Catch," a vibrant and
+                            electrifying restaurant brand crafted specifically
+                            for those who relish the thrill of culinary
+                            excellence. For avid food enthusiasts who feel their
+                            taste buds awaken at the first hint of exquisite
+                            flavors, "Savor's Catch" embodies the essence of
+                            that exhilarating moment when a perfectly prepared
+                            dish and a discerning diner engage in a delightful
+                            interplay of taste and craftsmanship.
+                        </p>
+                        <picture class="cs-picture cs-picture-right">
+                            <!--Mobile Image-->
+                            <source
+                                media="(max-width: 600px)"
+                                srcset="/dist/74d0a0d0d5ba4c16fab5.png"
+                            />
+                            <!--Tablet and above Image-->
+                            <source
+                                media="(min-width: 601px)"
+                                srcset="/dist/74d0a0d0d5ba4c16fab5.png"
+                            />
+                            <img
+                                loading="lazy"
+                                decoding="async"
+                                src="/dist/74d0a0d0d5ba4c16fab5.png"
+                                alt="people"
+                                width="608"
+                                height="406"
+                            />
+                        </picture>
+                    </div>
+                    <div class="cs-stats-group">
+                        <picture class="cs-picture cs-picture-left">
+                            <!--Mobile Image-->
+                            <source
+                                media="(max-width: 600px)"
+                                srcset="/dist/7aae6a15ce7d1a7a24e7.png"
+                            />
+                            <!--Tablet and above Image-->
+                            <source
+                                media="(min-width: 601px)"
+                                srcset="/dist/7aae6a15ce7d1a7a24e7.png"
+                            />
+                            <img
+                                loading="lazy"
+                                decoding="async"
+                                src="/dist/7aae6a15ce7d1a7a24e7.png"
+                                alt="people"
+                                width="608"
+                                height="662"
+                            />
+                        </picture>
+                        <ul class="cs-stats">
+                            <li class="cs-stat">
+                                <span class="cs-number">99%</span>
+                                <span class="cs-desc"
+                                    >Positive customer reviews</span
+                                >
+                            </li>
+                            <li class="cs-stat">
+                                <span class="cs-number">10</span>
+                                <span class="cs-desc"
+                                    >Dish 'Try Again' Special</span
+                                >
+                            </li>
+                            <li class="cs-stat">
+                                <span class="cs-number">24/7</span>
+                                <span class="cs-desc"
+                                    >Online reservation and inquiry
+                                    service</span
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
     </body>
 </html>
