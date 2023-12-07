@@ -684,10 +684,11 @@
 @media only screen and (min-width: 0rem) {
     #menu-1005 {
         padding: var(--sectionPadding);
-        background-color: #1a1a1a;
+        background-color: transparent;
         position: relative;
         z-index: 1;
     }
+
     #menu-1005:before {
         /* static tiled pattern */
         content: "";
@@ -704,6 +705,7 @@
         left: 0;
         z-index: -1;
     }
+
     #menu-1005 .cs-container {
         width: 100%;
         max-width: 80em;
@@ -715,6 +717,7 @@
         /* 48px - 64px */
         gap: clamp(3rem, 7vw, 4rem);
     }
+
     #menu-1005 .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: center;
@@ -724,6 +727,7 @@
         /* centers content horizontally, set to flex-start to left align */
         align-items: center;
     }
+
     #menu-1005 .cs-wrapper {
         /* 120px - 181px */
         width: clamp(7.5rem, 9vw, 11.3125rem);
@@ -733,6 +737,7 @@
         align-items: center;
         position: relative;
     }
+
     #menu-1005 .cs-wrapper:before {
         /* left line */
         content: "";
@@ -749,6 +754,7 @@
         right: 100%;
         transform: translateY(-50%);
     }
+
     #menu-1005 .cs-wrapper:after {
         /* right line */
         content: "";
@@ -765,17 +771,16 @@
         left: 100%;
         transform: translateY(-50%);
     }
+
     #menu-1005 .cs-wrapper img {
         width: 100%;
     }
 
-    #menu-1005 .cs-title,
-    #menu-1005 .cs-text {
-        color: var(--bodyTextColorWhite);
-    }
+
     #menu-1005 .cs-text {
         opacity: 0.8;
     }
+
     #menu-1005 .cs-button-solid {
         font-size: 1rem;
         /* 46px - 56px */
@@ -795,6 +800,7 @@
         box-sizing: border-box;
         transition: color 0.3s;
     }
+
     #menu-1005 .cs-button-solid:before {
         content: "";
         position: absolute;
@@ -807,12 +813,15 @@
         z-index: -1;
         transition: width 0.3s;
     }
+
     #menu-1005 .cs-button-solid:hover {
         color: #fff;
     }
+
     #menu-1005 .cs-button-solid:hover:before {
         width: 100%;
     }
+
     #menu-1005 .cs-card-group {
         margin: 0;
         padding: 0;
@@ -823,6 +832,7 @@
         /* 32px - 60px */
         row-gap: clamp(2rem, 6vw, 3.75rem);
     }
+
     #menu-1005 .cs-item {
         list-style: none;
         width: 100%;
@@ -834,6 +844,7 @@
         /* 16px - 36px */
         gap: clamp(1rem, 3vw, 2.25rem);
     }
+
     #menu-1005 .cs-picture {
         /* 76px - 160px */
         width: clamp(4.75rem, 14vw, 10rem);
@@ -845,6 +856,7 @@
         flex: none;
         position: relative;
     }
+
     #menu-1005 .cs-picture img {
         position: absolute;
         top: 0;
@@ -854,6 +866,7 @@
         /* makes it act like a background image */
         object-fit: cover;
     }
+
     #menu-1005 .cs-h3 {
         /* 16px - 24px */
         font-size: clamp(1rem, 2vw, 1.5rem);
@@ -862,13 +875,13 @@
         text-align: left;
         /* 8px - 16px */
         margin: 0 0 clamp(0.5rem, 1.5vw, 1rem);
-        color: var(--bodyTextColorWhite);
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
         gap: 0.75rem;
     }
+
     #menu-1005 .cs-h3:after {
         content: "";
         width: 50%;
@@ -879,10 +892,12 @@
         display: block;
         order: 1;
     }
+
     #menu-1005 .cs-name {
         max-width: 13.75rem;
         flex: none;
     }
+
     #menu-1005 .cs-price {
         /* 16px - 25px */
         font-size: clamp(1rem, 2vw, 1.5625rem);
@@ -899,16 +914,17 @@
         align-items: center;
         order: 3;
     }
+
     #menu-1005 .cs-item-p {
         /* 14px - 16px */
         font-size: clamp(0.875rem, 2vw, 1rem);
         line-height: 1.5em;
         text-align: left;
         margin: 0;
-        color: var(--bodyTextColorWhite);
         opacity: 0.8;
     }
 }
+
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #menu-1005 .cs-card-group {
@@ -917,13 +933,8 @@
         flex-wrap: wrap;
         column-gap: 1.25rem;
     }
+
     #menu-1005 .cs-item {
         width: 48.5%;
-    }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode #menu-1005 {
-        background-color: rgba(0, 0, 0, 0.6);
     }
 }

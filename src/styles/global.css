@@ -8,6 +8,7 @@
     --headerColorMedium: #2c394b;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
+    --bodyTextColorGray: #313131;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
