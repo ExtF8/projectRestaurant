@@ -1,34 +1,51 @@
 import { homeContents } from './homeContents';
 
-// Home page content loader
+/**
+ * Main function to load the content of home page
+ */
 export default function homePageLoader() {
-    // Get main content element id
+    // Select the main content area in the DOM
     const mainContent = document.querySelector('#main-content');
+
+    // Create and append the main section and content div
     const section = createSection('home-content-container');
     const homeContent = createDiv('home-content');
+    mainContent.appendChild(section);
+    section.appendChild(homeContent);
+
+    // Create and append left and right content sections
     const contentLeft = createContentLeft();
     const contentRight = createContentRight();
-
-    // Fill left section with content
-    section.appendChild(homeContent);
     homeContent.appendChild(contentLeft);
     homeContent.appendChild(contentRight);
-    mainContent.appendChild(section);
 }
 
-// Create section
+/**
+ * Creates a new section element with the given ID
+ * @param {string} id - The ID to set for new element
+ * @returns element
+ */
 function createSection(id) {
     const section = document.createElement('section');
     section.setAttribute('id', id);
     return section;
 }
 
+/**
+ * Creates a new div element with given class name
+ * @param {string} className - Class name to set for new div element
+ * @returns element
+ */
 function createDiv(className) {
     const div = document.createElement('div');
     div.setAttribute('class', className);
     return div;
 }
 
+/**
+ * Creates the left content section with image and stats
+ * @returns element
+ */
 function createContentLeft() {
     const contentLeft = createDiv('home-content-left');
     const leftImage = createImage(
@@ -43,7 +60,12 @@ function createContentLeft() {
     return contentLeft;
 }
 
-// Create Image
+/**
+ * Creates a picture element based on provided sources
+ * @param {string} classNames - The class names for the picture element
+ * @param {object} imageSources  - Image sources for different screen sizes
+ * @returns element
+ */
 function createImage(classNames, imageSources) {
     const picture = document.createElement('picture');
     picture.setAttribute('class', classNames);
@@ -63,7 +85,10 @@ function createImage(classNames, imageSources) {
     return picture;
 }
 
-// Create stats list under left image
+/**
+ * Creates a list element containing stats
+ * @returns element
+ */
 function createStatsList() {
     const list = document.createElement('ul');
     list.setAttribute('class', 'cs-stats');
@@ -77,6 +102,11 @@ function createStatsList() {
     return list;
 }
 
+/**
+ * Creates a list item for a single stat
+ * @param {object} stat - Statistic data containing number and text
+ * @returns element
+ */
 function createStatItem(stat) {
     const listItem = document.createElement('li');
     listItem.setAttribute('class', 'cs-stat');
@@ -90,6 +120,12 @@ function createStatItem(stat) {
     return listItem;
 }
 
+/**
+ * Creates a span element with class name and text
+ * @param {string} className - The class name for the span
+ * @param {string} text - The text content for the span
+ * @returns element
+ */
 function createSpan(className, text) {
     const span = document.createElement('span');
     span.setAttribute('class', className);
@@ -98,7 +134,10 @@ function createSpan(className, text) {
     return span;
 }
 
-// Fill right section with content
+/**
+ * Creates the right content with topper, title, paragraph and image
+ * @returns element
+ */
 function createContentRight() {
     const contentRight = createDiv('home-content-right');
     const topper = createTopper('cs-topper');
@@ -117,6 +156,11 @@ function createContentRight() {
     return contentRight;
 }
 
+/**
+ * Creates a topper element with given class name
+ * @param {string} className - The class name for the topper
+ * @returns element
+ */
 function createTopper(className) {
     const topper = document.createElement('span');
     topper.setAttribute('class', className);
@@ -125,6 +169,11 @@ function createTopper(className) {
     return topper;
 }
 
+/**
+ * Creates a title element with given class name
+ * @param {string} className - The class name for the title
+ * @returns element
+ */
 function createTitle(className) {
     const title = document.createElement('h2');
     title.setAttribute('class', className);
@@ -133,6 +182,11 @@ function createTitle(className) {
     return title;
 }
 
+/**
+ * Creates a paragraph element with given class name
+ * @param {string} className - The class name for the paragraph
+ * @returns element
+ */
 function createParagraph(className) {
     const paragraph = document.createElement('p');
     paragraph.setAttribute('class', className);
@@ -141,7 +195,11 @@ function createParagraph(className) {
     return paragraph;
 }
 
-// helper function for setting multiple attributes
+/**
+ * Helper function to set up multiple attributes
+ * @param {HTMLElement} element - The DOM element to set attributes on
+ * @param {object} attributes - An object containing key-value pairs
+ */
 function setAttributes(element, attributes) {
     Object.keys(attributes).forEach((attr) => {
         element.setAttribute(attr, attributes[attr]);
