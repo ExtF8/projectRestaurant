@@ -38,28 +38,28 @@ export default function homePageLoader(type) {
 
     // Element under left image
     let list = document.createElement('ul');
-    
+
     contentLeft.appendChild(list);
     list.setAttribute('class', 'cs-stats');
-    
+
     (function firstStatContainer() {
         let listItem = document.createElement('li');
         listItem.setAttribute('class', 'cs-stat');
 
         let firstSpan = document.createElement('span');
         let secondSpan = document.createElement('span');
-        
+
         let firstStat = listItem;
-        
+
         firstStat.appendChild(firstSpan);
         firstSpan.setAttribute('class', 'cs-number');
         firstSpan.innerText = homeContents[0].stats.firstStat.num;
-        
+
         firstStat.appendChild(secondSpan);
         secondSpan.setAttribute('class', 'cs-desc');
         secondSpan.innerText = homeContents[0].stats.firstStat.text;
         list.appendChild(listItem);
-        
+
         return firstStatContainer;
     })();
 

@@ -62,7 +62,7 @@
     #dark-mode-toggle {
         display: block;
         position: absolute;
-        top: 6%;
+        top: 50%;
         transform: translateY(-50%);
         right: 3.75rem;
         width: 3rem;

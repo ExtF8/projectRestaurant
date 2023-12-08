@@ -13,8 +13,8 @@
         padding: 0.75rem 1rem;
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        /* position: fixed;
-        z-index: 10000; */
+        position: fixed;
+        z-index: 10000;
     }
 
     #cs-navigation:before {
@@ -425,7 +425,7 @@
         gap: clamp(3rem, 6vw, 4rem);
     }
 
-    #home-content-container .cs-content {
+    #home-content-container .home-content-right {
         /* set text align to left if content needs to be left aligned */
         text-align: left;
         width: 100%;
@@ -532,7 +532,7 @@
         align-items: stretch;
     }
 
-    #home-content-container .cs-content {
+    #home-content-container .home-content-right {
         /* sends it to the right in the 2nd position */
         order: 2;
     }
@@ -949,8 +949,9 @@
         padding: var(--sectionPadding);
         background-color: #f7f7f7;
         height: 100%;
-        
+
     }
+
     #contact-strip-324 .cs-stat-group {
         width: 100%;
         /* changes to 1280px at desktop */
@@ -963,6 +964,7 @@
         flex-direction: column;
         gap: 2.5rem;
     }
+
     #contact-strip-324 .cs-item {
         list-style: none;
         width: 18.125rem;
@@ -972,11 +974,13 @@
         justify-content: flex-start;
         align-items: center;
     }
+
     #contact-strip-324 .cs-item:hover .cs-picture {
         background-color: #fff;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         transform: scale(1.05);
     }
+
     #contact-strip-324 .cs-picture {
         width: 5rem;
         height: 5rem;
@@ -994,16 +998,19 @@
             box-shadow 0.3s,
             transform 0.6s;
     }
+
     #contact-strip-324 .cs-flex-group {
         display: flex;
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
     }
+
     #contact-strip-324 .cs-icon {
         width: 1.75rem;
         height: auto;
     }
+
     #contact-strip-324 .cs-header {
         font-size: 1.25rem;
         color: var(--headerColor);
@@ -1013,6 +1020,7 @@
         margin-bottom: 0.75rem;
         display: block;
     }
+
     #contact-strip-324 .cs-link,
     #contact-strip-324 .cs-hours {
         font-size: var(--bodyFontSize);
@@ -1021,10 +1029,12 @@
         color: #767676;
         display: block;
     }
+
     #contact-strip-324 .cs-link:hover {
         text-decoration: underline;
     }
 }
+
 /* Tablet - 650px */
 @media only screen and (min-width: 40.625rem) {
     #contact-strip-324 .cs-stat-group {
@@ -1034,6 +1044,7 @@
         row-gap: 2rem;
     }
 }
+
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
     #contact-strip-324 .cs-stat-group {
@@ -1042,11 +1053,13 @@
         justify-content: space-evenly;
     }
 }
+
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
     body.dark-mode #contact-strip-324 {
         background-color: transparent;
     }
+
     body.dark-mode #contact-strip-324 .cs-header,
     body.dark-mode #contact-strip-324 .cs-link,
     body.dark-mode #contact-strip-324 .cs-hours {
