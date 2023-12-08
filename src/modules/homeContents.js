@@ -58,7 +58,7 @@ let homeContents = [
                 text: `Dish 'Try Again' Special`
             },
             thirdStat: {
-                num: '27/7',
+                num: '24/7',
                 text: 'Online reservation and inquiry service'
             }
         }
