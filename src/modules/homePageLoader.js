@@ -1,11 +1,14 @@
+// Importing home contents data from homeContents module
 import { homeContents } from './homeContents';
 
+// Extracting the first item from home contents to use as home page content
 const HOME_PAGE_CONTENTS = homeContents[0];
 
+// Object mapping common attribute names to their respective string representations
 const attributeName = { id: 'id', class: 'class' };
 
 /**
- * Main function to load the content of home page
+ * Loads and displays the home page content
  */
 export default function homePageLoader() {
     // Select the main content area in the DOM
@@ -25,11 +28,11 @@ export default function homePageLoader() {
 }
 
 /**
- * Creates a new section element with the given ID
- * @param {string} id - The ID to set for new element
- * @returns {HTMLElement} - The section element
+ * Creates a section HTML element with specified attribute and value
+ * @param {string} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
+ * @returns {HTMLElement} - The created section element
  */
-
 function createSection(attributeName, attributeValue) {
     const section = document.createElement('section');
     section.setAttribute(attributeName, attributeValue);
@@ -37,10 +40,10 @@ function createSection(attributeName, attributeValue) {
 }
 
 /**
- * Creates a new div element with given attribute name and value
- * @param {object} attributeName
- * @param {string} attributeValue
- * @returns {HTMLDivElement}
+ * Creates a div HTML element with a specified attribute name and value
+ * @param {object} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
+ * @returns {HTMLDivElement} - The created div element
  */
 function createDiv(attributeName, attributeValue) {
     const div = document.createElement('div');
@@ -49,12 +52,12 @@ function createDiv(attributeName, attributeValue) {
 }
 
 /**
- * Creates the left content section with image and stats
- * @returns element
+ * Creates the left section of the home page content including image and stats
+ * @returns {HTMLElement}
  */
 function createContentLeft() {
     const contentLeft = createDiv(attributeName.class, 'home-content-left');
-    const leftImage = createImage(
+    const leftImage = createPicture(
         attributeName.class,
         'cs-picture cs-picture-left',
         HOME_PAGE_CONTENTS.imageLeft
@@ -72,13 +75,13 @@ function createContentLeft() {
 }
 
 /**
- * Creates a picture element bases on provided attributes and sources
- * @param {object} attributeName - The attribute name
- * @param {string} attributeValue  - The attribute value
- * @param {object} imageSources - Image sources for different screen sizes
- * @returns {HTMLPictureElement}
+ * Creates a picture element with provided attributes and sources
+ * @param {object} attributeName - Name of the attribute
+ * @param {string} attributeValue  - Value for the attribute
+ * @param {object} imageSources - Object containing picture sources for different screen sizes
+ * @returns {HTMLPictureElement} - The created picture element
  */
-function createImage(attributeName, attributeValue, imageSources) {
+function createPicture(attributeName, attributeValue, imageSources) {
     const picture = document.createElement('picture');
     picture.setAttribute(attributeName, attributeValue);
 
@@ -98,18 +101,11 @@ function createImage(attributeName, attributeValue, imageSources) {
 }
 
 /**
- * Creates a unordered list element containing data
- * @param {string} className
- * @param {object} data
- * @returns {HTMLUListElement}
- */
-
-/**
- * Creates a unordered list element from attribute name and value containing data
- * @param {object} attributeName
- * @param {string} attributeValue
- * @param {object} data
- * @returns {HTMLUListElement}
+ * Creates a list (ul) element with provided attributes and data
+ * @param {string} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
+ * @param {object} data - Data to populate the list with
+ * @returns {HTMLUListElement} - Created unordered list element
  */
 function createStatsList(attributeName, attributeValue, data) {
     const list = document.createElement('ul');
@@ -127,9 +123,11 @@ function createStatsList(attributeName, attributeValue, data) {
 }
 
 /**
- * Creates a list item for a single stat
+ * Creates a list item (li) element for displaying a single stat
+ * @param {string} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
  * @param {object} data - Statistic data containing number or text
- * @returns {HTMLLIElement}
+ * @returns {HTMLLIElement} - The created list item
  */
 function createStatItem(attributeName, attributeValue, data) {
     const listItem = document.createElement('li');
@@ -145,10 +143,11 @@ function createStatItem(attributeName, attributeValue, data) {
 }
 
 /**
- * Creates a span element with class name and text
- * @param {string} className - The class name for the span
- * @param {string} text - The text content for the span
- * @returns element
+ * Creates a span element with a specified class and text content
+ * @param {string} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
+ * @param {string} text - Text content for the span
+ * @returns {HTMLElement} - The created span element
  */
 function createSpan(attributeName, attributeValue, text) {
     const span = document.createElement('span');
@@ -159,8 +158,8 @@ function createSpan(attributeName, attributeValue, text) {
 }
 
 /**
- * Creates the right content with topper, title, paragraph and image
- * @returns element
+ * Creates the right section of the home page content including topper, title, paragraph, and image.
+ * @returns {HTMLElement} - The created right content section.
  */
 function createContentRight() {
     const contentRight = createDiv(attributeName.class, 'home-content-right');
@@ -179,7 +178,7 @@ function createContentRight() {
         'cs-text',
         HOME_PAGE_CONTENTS.content.paragraph
     );
-    const rightImage = createImage(
+    const rightImage = createPicture(
         attributeName.class,
         'cs-picture cs-picture-right',
         HOME_PAGE_CONTENTS.imageRight
@@ -194,9 +193,11 @@ function createContentRight() {
 }
 
 /**
- * Creates a topper element with given class name
- * @param {string} className - The class name for the topper
- * @returns element
+ * Creates a topper element (span) with a specified class and text content.
+ * @param {string} attributeName - Name of the attribute (e.g., 'class').
+ * @param {string} attributeValue - Value for the attribute.
+ * @param {string} text - Text content for the topper.
+ * @returns {HTMLElement} - The created topper element.
  */
 function createTopper(attributeName, attributeValue, text) {
     const topper = document.createElement('span');
@@ -207,10 +208,11 @@ function createTopper(attributeName, attributeValue, text) {
 }
 
 /**
- * Creates a title element h2 with given class name
- * @param {string} className - The class name for the title
- * @param {string} text - The text content for the title
- * @returns {HTMLHeadingElement}
+ * Creates a title element (h2) with a specified class and text content.
+ * @param {string} attributeName - Name of the attribute (e.g., 'class').
+ * @param {string} attributeValue - Value for the attribute.
+ * @param {string} text - Text content for the title.
+ * @returns {HTMLHeadingElement} - The created title element.
  */
 function createTitle(attributeName, attributeValue, text) {
     const title = document.createElement('h2');
@@ -221,9 +223,11 @@ function createTitle(attributeName, attributeValue, text) {
 }
 
 /**
- * Creates a paragraph element with given class name
- * @param {string} className - The class name for the paragraph
- * @returns element
+ * Creates a paragraph element (p) with a specified class and text content.
+ * @param {string} attributeName - Name of the attribute (e.g., 'class').
+ * @param {string} attributeValue - Value for the attribute.
+ * @param {string} text - Text content for the paragraph.
+ * @returns {HTMLParagraphElement} - The created paragraph element.
  */
 function createParagraph(attributeName, attributeValue, text) {
     const paragraph = document.createElement('p');
@@ -234,9 +238,9 @@ function createParagraph(attributeName, attributeValue, text) {
 }
 
 /**
- * Helper function to set up multiple attributes
- * @param {HTMLElement} element - The DOM element to set attributes on
- * @param {object} attributes - An object containing key-value pairs
+ * Sets multiple attributes on a DOM element based on a provided object.
+ * @param {HTMLElement} element - The DOM element to set attributes on.
+ * @param {object} attributes - Object containing key-value pairs for attributes.
  */
 function setAttributes(element, attributes) {
     Object.keys(attributes).forEach((attr) => {
