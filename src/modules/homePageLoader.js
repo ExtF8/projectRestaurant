@@ -38,13 +38,77 @@ function createContentLeft() {
     const statsList = createList(
         attributeName.class,
         'cs-stats',
-        HOME_PAGE_CONTENTS.stats
+        HOME_PAGE_CONTENTS.stats,
+        (stat) =>
+            createListItem(
+                attributeName.class,
+                'cs-stat',
+                stat,
+                renderStatContent
+            )
     );
 
     contentLeft.appendChild(leftImage);
     contentLeft.appendChild(statsList);
 
     return contentLeft;
+}
+
+/**
+ * Creates a list (ul) element with provided attributes. The list items are created using a rendering function passed as an argument.
+ * @param {string} attributeName - Name of the attribute (e.g., 'class').
+ * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stats').
+ * @param {object} data - Data to populate the list with. Expects an object where each property can be rendered as a list item.
+ * @param {Function} renderItem - Function that takes an item of data and returns a list item (li) element.
+ * @returns {HTMLUListElement} - The created unordered list element.
+ */
+function createList(attributeName, attributeValue, data, renderItem) {
+    const list = document.createElement('ul');
+    list.setAttribute(attributeName, attributeValue);
+
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            list.appendChild(renderItem(data[key]));
+        }
+    }
+
+    return list;
+}
+
+/**
+ * Creates a list item (li) element using a provided rendering function for the item's content.
+ * @param {string} attributeName - Name of the attribute (e.g., 'class').
+ * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stat').
+ * @param {object} item - Data item to be rendered inside the list item.
+ * @param {Function} renderContent - Function that takes the item and returns the content to be placed inside the list item.
+ * @returns {HTMLLIElement} - The created list item.
+ */
+function createListItem(attributeName, attributeValue, item, renderContent) {
+    const listItem = document.createElement('li');
+    listItem.setAttribute(attributeName, attributeValue);
+
+    const content = renderContent(item);
+    listItem.appendChild(content);
+
+    return listItem;
+}
+
+/**
+ * Renders the content of a statistics item for display in a list item.
+ * This function creates and returns a document fragment containing the stat's number and description.
+ * @param {object} stat - The statistics data item, expected to have 'num' and 'text' properties.
+ * @returns {DocumentFragment} - The document fragment containing the rendered content.
+ */
+function renderStatContent(stat) {
+    const fragment = document.createDocumentFragment();
+
+    const numberSpan = createSpan(attributeName.class, 'cs-number', stat.num);
+    const textSpan = createSpan(attributeName.class, 'cs-desc', stat.text);
+
+    fragment.appendChild(numberSpan);
+    fragment.appendChild(textSpan);
+
+    return fragment;
 }
 
 /**
@@ -133,48 +197,6 @@ function createPicture(attributeName, attributeValue, imageSources) {
     });
 
     return picture;
-}
-
-/**
- * Creates a list (ul) element with provided attributes and data
- * @param {string} attributeName - Name of the attribute
- * @param {string} attributeValue - Value for the attribute
- * @param {object} data - Data to populate the list with
- * @returns {HTMLUListElement} - Created unordered list element
- */
-function createList(attributeName, attributeValue, data) {
-    const list = document.createElement('ul');
-    list.setAttribute(attributeName, attributeValue);
-
-    for (let key in data) {
-        if (data.hasOwnProperty(key)) {
-            list.appendChild(
-                createListItem(attributeName, 'cs-stat', data[key])
-            );
-        }
-    }
-
-    return list;
-}
-
-/**
- * Creates a list item (li) element for displaying a single stat
- * @param {string} attributeName - Name of the attribute
- * @param {string} attributeValue - Value for the attribute
- * @param {object} data - Statistic data containing number or text
- * @returns {HTMLLIElement} - The created list item
- */
-function createListItem(attributeName, attributeValue, data) {
-    const listItem = document.createElement('li');
-    listItem.setAttribute(attributeName, attributeValue);
-
-    const numberSpan = createSpan(attributeName, 'cs-number', data.num);
-    const textSpan = createSpan(attributeName, 'cs-desc', data.text);
-
-    listItem.appendChild(numberSpan);
-    listItem.appendChild(textSpan);
-
-    return listItem;
 }
 
 /**
