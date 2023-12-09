@@ -4,7 +4,7 @@
  * @param {string} attributeValue - Value for the attribute
  * @returns {HTMLElement} - The created section element
  */
-export default function createSection(attributeName, attributeValue) {
+export function createSection(attributeName, attributeValue) {
     const section = document.createElement('section');
     section.setAttribute(attributeName, attributeValue);
     return section;
@@ -16,7 +16,7 @@ export default function createSection(attributeName, attributeValue) {
  * @param {string} attributeValue - Value for the attribute
  * @returns {HTMLDivElement} - The created div element
  */
-export default function createDiv(attributeName, attributeValue) {
+export function createDiv(attributeName, attributeValue) {
     const div = document.createElement('div');
     div.setAttribute(attributeName, attributeValue);
     return div;
@@ -29,7 +29,7 @@ export default function createDiv(attributeName, attributeValue) {
  * @param {object} imageSources - Object containing picture sources for different screen sizes
  * @returns {HTMLPictureElement} - The created picture element
  */
-export default function createPicture(attributeName, attributeValue, imageSources) {
+export function createPicture(attributeName, attributeValue, imageSources) {
     const picture = document.createElement('picture');
     picture.setAttribute(attributeName, attributeValue);
 
@@ -49,14 +49,14 @@ export default function createPicture(attributeName, attributeValue, imageSource
 }
 
 /**
- * Creates a list (ul) element with provided attributes. The list items are created using a rendering export default function passed as an argument.
+ * Creates a list (ul) element with provided attributes. The list items are created using a rendering export function passed as an argument.
  * @param {string} attributeName - Name of the attribute (e.g., 'class').
  * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stats').
  * @param {object} data - Data to populate the list with. Expects an object where each property can be rendered as a list item.
- * @param {Function} renderItem - export default function that takes an item of data and returns a list item (li) element.
+ * @param {Function} renderItem - export function that takes an item of data and returns a list item (li) element.
  * @returns {HTMLUListElement} - The created unordered list element.
  */
-export default function createList(attributeName, attributeValue, data, renderItem) {
+export function createList(attributeName, attributeValue, data, renderItem) {
     const list = document.createElement('ul');
     list.setAttribute(attributeName, attributeValue);
 
@@ -70,14 +70,14 @@ export default function createList(attributeName, attributeValue, data, renderIt
 }
 
 /**
- * Creates a list item (li) element using a provided rendering export default function for the item's content.
+ * Creates a list item (li) element using a provided rendering export function for the item's content.
  * @param {string} attributeName - Name of the attribute (e.g., 'class').
  * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stat').
  * @param {object} item - Data item to be rendered inside the list item.
- * @param {Function} renderContent - export default function that takes the item and returns the content to be placed inside the list item.
+ * @param {Function} renderContent - export function that takes the item and returns the content to be placed inside the list item.
  * @returns {HTMLLIElement} - The created list item.
  */
-export default function createListItem(attributeName, attributeValue, item, renderContent) {
+export function createListItem(attributeName, attributeValue, item, renderContent) {
     const listItem = document.createElement('li');
     listItem.setAttribute(attributeName, attributeValue);
 
@@ -94,7 +94,7 @@ export default function createListItem(attributeName, attributeValue, item, rend
  * @param {string} text - Text content for the span
  * @returns {HTMLElement} - The created span element
  */
-export default function createSpan(attributeName, attributeValue, text) {
+export function createSpan(attributeName, attributeValue, text) {
     const span = document.createElement('span');
     span.setAttribute(attributeName, attributeValue);
     span.innerText = text;
@@ -109,7 +109,7 @@ export default function createSpan(attributeName, attributeValue, text) {
  * @param {string} text - Text content for the topper.
  * @returns {HTMLElement} - The created topper element.
  */
-export default function createTopper(attributeName, attributeValue, text) {
+export function createTopper(attributeName, attributeValue, text) {
     const topper = document.createElement('span');
     topper.setAttribute(attributeName, attributeValue);
     topper.innerText = text;
@@ -124,7 +124,7 @@ export default function createTopper(attributeName, attributeValue, text) {
  * @param {string} text - Text content for the title.
  * @returns {HTMLHeadingElement} - The created title element.
  */
-export default function createTitle(attributeName, attributeValue, text) {
+export function createTitle(attributeName, attributeValue, text) {
     const title = document.createElement('h2');
     title.setAttribute(attributeName, attributeValue);
     title.textContent = text;
@@ -139,7 +139,7 @@ export default function createTitle(attributeName, attributeValue, text) {
  * @param {string} text - Text content for the paragraph.
  * @returns {HTMLParagraphElement} - The created paragraph element.
  */
-export default function createParagraph(attributeName, attributeValue, text) {
+export function createParagraph(attributeName, attributeValue, text) {
     const paragraph = document.createElement('p');
     paragraph.setAttribute(attributeName, attributeValue);
     paragraph.textContent = text;
@@ -152,7 +152,7 @@ export default function createParagraph(attributeName, attributeValue, text) {
  * @param {HTMLElement} element - The DOM element to set attributes on.
  * @param {object} attributes - Object containing key-value pairs for attributes.
  */
-export default function setAttributes(element, attributes) {
+export function setAttributes(element, attributes) {
     Object.keys(attributes).forEach((attr) => {
         element.setAttribute(attr, attributes[attr]);
     });
