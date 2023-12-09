@@ -35,7 +35,7 @@ function createContentLeft() {
         'cs-picture cs-picture-left',
         HOME_PAGE_CONTENTS.imageLeft
     );
-    const statsList = createStatsList(
+    const statsList = createList(
         attributeName.class,
         'cs-stats',
         HOME_PAGE_CONTENTS.stats
@@ -142,14 +142,14 @@ function createPicture(attributeName, attributeValue, imageSources) {
  * @param {object} data - Data to populate the list with
  * @returns {HTMLUListElement} - Created unordered list element
  */
-function createStatsList(attributeName, attributeValue, data) {
+function createList(attributeName, attributeValue, data) {
     const list = document.createElement('ul');
     list.setAttribute(attributeName, attributeValue);
 
     for (let key in data) {
         if (data.hasOwnProperty(key)) {
             list.appendChild(
-                createStatItem(attributeName, 'cs-stat', data[key])
+                createListItem(attributeName, 'cs-stat', data[key])
             );
         }
     }
@@ -164,7 +164,7 @@ function createStatsList(attributeName, attributeValue, data) {
  * @param {object} data - Statistic data containing number or text
  * @returns {HTMLLIElement} - The created list item
  */
-function createStatItem(attributeName, attributeValue, data) {
+function createListItem(attributeName, attributeValue, data) {
     const listItem = document.createElement('li');
     listItem.setAttribute(attributeName, attributeValue);
 
