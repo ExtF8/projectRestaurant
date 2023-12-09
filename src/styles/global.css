@@ -84,3 +84,7 @@ footer {
     text-decoration: none;
     color: var(--headerColorMedium);
 }
+
+#cs-navigation .cs-li-link {
+    cursor: pointer;
+}
