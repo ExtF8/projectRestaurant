@@ -1,5 +1,7 @@
 import { homeContents } from './homeContents';
 
+const HOME_PAGE_CONTENTS = homeContents[0];
+
 /**
  * Main function to load the content of home page
  */
@@ -50,7 +52,7 @@ function createContentLeft() {
     const contentLeft = createDiv('home-content-left');
     const leftImage = createImage(
         'cs-picture cs-picture-left',
-        homeContents[0].imageLeft
+        HOME_PAGE_CONTENTS.imageLeft
     );
     const statsList = createStatsList();
 
@@ -93,9 +95,9 @@ function createStatsList() {
     const list = document.createElement('ul');
     list.setAttribute('class', 'cs-stats');
 
-    for (let key in homeContents[0].stats) {
-        if (homeContents[0].stats.hasOwnProperty(key)) {
-            list.appendChild(createStatItem(homeContents[0].stats[key]));
+    for (let key in HOME_PAGE_CONTENTS.stats) {
+        if (HOME_PAGE_CONTENTS.stats.hasOwnProperty(key)) {
+            list.appendChild(createStatItem(HOME_PAGE_CONTENTS.stats[key]));
         }
     }
 
@@ -145,7 +147,7 @@ function createContentRight() {
     const paragraph = createParagraph('cs-text');
     const rightImage = createImage(
         'cs-picture cs-picture-right',
-        homeContents[0].imageRight
+        HOME_PAGE_CONTENTS.imageRight
     );
 
     contentRight.appendChild(topper);
@@ -164,7 +166,7 @@ function createContentRight() {
 function createTopper(className) {
     const topper = document.createElement('span');
     topper.setAttribute('class', className);
-    topper.innerText = homeContents[0].content.topper;
+    topper.innerText = HOME_PAGE_CONTENTS.content.topper;
 
     return topper;
 }
@@ -177,7 +179,7 @@ function createTopper(className) {
 function createTitle(className) {
     const title = document.createElement('h2');
     title.setAttribute('class', className);
-    title.textContent = homeContents[0].content.title;
+    title.textContent = HOME_PAGE_CONTENTS.content.title;
 
     return title;
 }
@@ -190,7 +192,7 @@ function createTitle(className) {
 function createParagraph(className) {
     const paragraph = document.createElement('p');
     paragraph.setAttribute('class', className);
-    paragraph.textContent = homeContents[0].content.paragraph;
+    paragraph.textContent = HOME_PAGE_CONTENTS.content.paragraph;
 
     return paragraph;
 }
