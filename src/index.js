@@ -6,6 +6,7 @@ import darkModeToggler from './modules/darkMode';
 import mobileNavigationToggling from './modules/mobileNavigation';
 
 import homePageLoader from './modules/homePageLoader.js';
+import menuPageLoader from './modules/menuPageLoader.js';
 
 import homePageLeft from './assets/img/homePageLeft.png';
 import homePageRight from './assets/img/homePageRight.png';
@@ -28,7 +29,7 @@ let mainContent = document.getElementById('#main-content');
 // Initial home page load
 // loadMain(currentTab, content, reviews, homeTitle, info);
 
-homePageLoader()
+homePageLoader();
 // Set click events for tab navigation
 pageNames.forEach((pageName) => {
     const button = document.getElementById(pageName);
@@ -37,10 +38,11 @@ pageNames.forEach((pageName) => {
 
         if (button.id == 'home') {
             console.log('home');
-            homePageLoader()
+            homePageLoader();
             //   loadMain(button.id, content, reviews, homeTitle, info);
         } else if (button.id == 'menu') {
             console.log('menu');
+            menuPageLoader();
 
             //   loadMain(button.id, content, menu, menuTitle);
         } else {
