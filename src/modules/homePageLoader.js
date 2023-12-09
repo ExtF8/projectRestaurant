@@ -4,9 +4,6 @@ import { homeContents } from './homeContents';
 // Extracting the first item from home contents to use as home page content
 const HOME_PAGE_CONTENTS = homeContents[0];
 
-// Object mapping common attribute names to their respective string representations
-const attributeName = { id: 'id', class: 'class' };
-
 /**
  * Loads and displays the home page content
  */
@@ -25,30 +22,6 @@ export default function homePageLoader() {
     const contentRight = createContentRight();
     homeContent.appendChild(contentLeft);
     homeContent.appendChild(contentRight);
-}
-
-/**
- * Creates a section HTML element with specified attribute and value
- * @param {string} attributeName - Name of the attribute
- * @param {string} attributeValue - Value for the attribute
- * @returns {HTMLElement} - The created section element
- */
-function createSection(attributeName, attributeValue) {
-    const section = document.createElement('section');
-    section.setAttribute(attributeName, attributeValue);
-    return section;
-}
-
-/**
- * Creates a div HTML element with a specified attribute name and value
- * @param {object} attributeName - Name of the attribute
- * @param {string} attributeValue - Value for the attribute
- * @returns {HTMLDivElement} - The created div element
- */
-function createDiv(attributeName, attributeValue) {
-    const div = document.createElement('div');
-    div.setAttribute(attributeName, attributeValue);
-    return div;
 }
 
 /**
@@ -72,6 +45,68 @@ function createContentLeft() {
     contentLeft.appendChild(statsList);
 
     return contentLeft;
+}
+
+/**
+ * Creates the right section of the home page content including topper, title, paragraph, and image.
+ * @returns {HTMLElement} - The created right content section.
+ */
+function createContentRight() {
+    const contentRight = createDiv(attributeName.class, 'home-content-right');
+    const topper = createTopper(
+        attributeName.class,
+        'cs-topper',
+        HOME_PAGE_CONTENTS.content.topper
+    );
+    const title = createTitle(
+        attributeName.class,
+        'cs-title',
+        HOME_PAGE_CONTENTS.content.title
+    );
+    const paragraph = createParagraph(
+        attributeName.class,
+        'cs-text',
+        HOME_PAGE_CONTENTS.content.paragraph
+    );
+    const rightImage = createPicture(
+        attributeName.class,
+        'cs-picture cs-picture-right',
+        HOME_PAGE_CONTENTS.imageRight
+    );
+
+    contentRight.appendChild(topper);
+    contentRight.appendChild(title);
+    contentRight.appendChild(paragraph);
+    contentRight.appendChild(rightImage);
+
+    return contentRight;
+}
+
+// Object mapping common attribute names to their respective string representations
+const attributeName = { id: 'id', class: 'class' };
+
+/**
+ * Creates a section HTML element with specified attribute and value
+ * @param {string} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
+ * @returns {HTMLElement} - The created section element
+ */
+function createSection(attributeName, attributeValue) {
+    const section = document.createElement('section');
+    section.setAttribute(attributeName, attributeValue);
+    return section;
+}
+
+/**
+ * Creates a div HTML element with a specified attribute name and value
+ * @param {object} attributeName - Name of the attribute
+ * @param {string} attributeValue - Value for the attribute
+ * @returns {HTMLDivElement} - The created div element
+ */
+function createDiv(attributeName, attributeValue) {
+    const div = document.createElement('div');
+    div.setAttribute(attributeName, attributeValue);
+    return div;
 }
 
 /**
@@ -155,41 +190,6 @@ function createSpan(attributeName, attributeValue, text) {
     span.innerText = text;
 
     return span;
-}
-
-/**
- * Creates the right section of the home page content including topper, title, paragraph, and image.
- * @returns {HTMLElement} - The created right content section.
- */
-function createContentRight() {
-    const contentRight = createDiv(attributeName.class, 'home-content-right');
-    const topper = createTopper(
-        attributeName.class,
-        'cs-topper',
-        HOME_PAGE_CONTENTS.content.topper
-    );
-    const title = createTitle(
-        attributeName.class,
-        'cs-title',
-        HOME_PAGE_CONTENTS.content.title
-    );
-    const paragraph = createParagraph(
-        attributeName.class,
-        'cs-text',
-        HOME_PAGE_CONTENTS.content.paragraph
-    );
-    const rightImage = createPicture(
-        attributeName.class,
-        'cs-picture cs-picture-right',
-        HOME_PAGE_CONTENTS.imageRight
-    );
-
-    contentRight.appendChild(topper);
-    contentRight.appendChild(title);
-    contentRight.appendChild(paragraph);
-    contentRight.appendChild(rightImage);
-
-    return contentRight;
 }
 
 /**
