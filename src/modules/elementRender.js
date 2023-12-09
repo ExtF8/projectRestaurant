@@ -49,12 +49,12 @@ export function createPicture(attributeName, attributeValue, imageSources) {
 }
 
 /**
- * Creates a list (ul) element with provided attributes. The list items are created using a rendering export function passed as an argument.
- * @param {string} attributeName - Name of the attribute (e.g., 'class').
- * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stats').
- * @param {object} data - Data to populate the list with. Expects an object where each property can be rendered as a list item.
- * @param {Function} renderItem - export function that takes an item of data and returns a list item (li) element.
- * @returns {HTMLUListElement} - The created unordered list element.
+ * Creates a list (ul) element with provided attributes. The list items are created using a rendering export function passed as an argument
+ * @param {string} attributeName - Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stats')
+ * @param {object} data - Data to populate the list with. Expects an object where each property can be rendered as a list item
+ * @param {Function} renderItem - export function that takes an item of data and returns a list item (li) element
+ * @returns {HTMLUListElement} - The created unordered list element
  */
 export function createList(attributeName, attributeValue, data, renderItem) {
     const list = document.createElement('ul');
@@ -70,14 +70,19 @@ export function createList(attributeName, attributeValue, data, renderItem) {
 }
 
 /**
- * Creates a list item (li) element using a provided rendering export function for the item's content.
- * @param {string} attributeName - Name of the attribute (e.g., 'class').
- * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stat').
- * @param {object} item - Data item to be rendered inside the list item.
- * @param {Function} renderContent - export function that takes the item and returns the content to be placed inside the list item.
- * @returns {HTMLLIElement} - The created list item.
+ * Creates a list item (li) element using a provided rendering export function for the item's content
+ * @param {string} attributeName - Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stat')
+ * @param {object} item - Data item to be rendered inside the list item
+ * @param {Function} renderContent - export function that takes the item and returns the content to be placed inside the list item
+ * @returns {HTMLLIElement} - The created list item
  */
-export function createListItem(attributeName, attributeValue, item, renderContent) {
+export function createListItem(
+    attributeName,
+    attributeValue,
+    item,
+    renderContent
+) {
     const listItem = document.createElement('li');
     listItem.setAttribute(attributeName, attributeValue);
 
@@ -103,11 +108,11 @@ export function createSpan(attributeName, attributeValue, text) {
 }
 
 /**
- * Creates a topper element (span) with a specified class and text content.
- * @param {string} attributeName - Name of the attribute (e.g., 'class').
- * @param {string} attributeValue - Value for the attribute.
- * @param {string} text - Text content for the topper.
- * @returns {HTMLElement} - The created topper element.
+ * Creates a topper element (span) with a specified class and text content
+ * @param {string} attributeName - Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - Value for the attribute
+ * @param {string} text - Text content for the topper
+ * @returns {HTMLElement} - The created topper element
  */
 export function createTopper(attributeName, attributeValue, text) {
     const topper = document.createElement('span');
@@ -118,11 +123,11 @@ export function createTopper(attributeName, attributeValue, text) {
 }
 
 /**
- * Creates a title element (h2) with a specified class and text content.
- * @param {string} attributeName - Name of the attribute (e.g., 'class').
- * @param {string} attributeValue - Value for the attribute.
- * @param {string} text - Text content for the title.
- * @returns {HTMLHeadingElement} - The created title element.
+ * Creates a title element (h2) with a specified class and text content
+ * @param {string} attributeName - Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - Value for the attribute
+ * @param {string} text - Text content for the title
+ * @returns {HTMLHeadingElement} - The created title element
  */
 export function createTitle(attributeName, attributeValue, text) {
     const title = document.createElement('h2');
@@ -133,11 +138,11 @@ export function createTitle(attributeName, attributeValue, text) {
 }
 
 /**
- * Creates a paragraph element (p) with a specified class and text content.
- * @param {string} attributeName - Name of the attribute (e.g., 'class').
- * @param {string} attributeValue - Value for the attribute.
- * @param {string} text - Text content for the paragraph.
- * @returns {HTMLParagraphElement} - The created paragraph element.
+ * Creates a paragraph element (p) with a specified class and text content
+ * @param {string} attributeName - Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - Value for the attribute
+ * @param {string} text - Text content for the paragraph
+ * @returns {HTMLParagraphElement} - The created paragraph element
  */
 export function createParagraph(attributeName, attributeValue, text) {
     const paragraph = document.createElement('p');
@@ -148,9 +153,9 @@ export function createParagraph(attributeName, attributeValue, text) {
 }
 
 /**
- * Sets multiple attributes on a DOM element based on a provided object.
- * @param {HTMLElement} element - The DOM element to set attributes on.
- * @param {object} attributes - Object containing key-value pairs for attributes.
+ * Sets multiple attributes on a DOM element based on a provided object
+ * @param {HTMLElement} element - The DOM element to set attributes on
+ * @param {object} attributes - Object containing key-value pairs for attributes
  */
 export function setAttributes(element, attributes) {
     Object.keys(attributes).forEach((attr) => {

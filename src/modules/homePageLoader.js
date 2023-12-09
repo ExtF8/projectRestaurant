@@ -1,6 +1,8 @@
 // Importing home contents data from homeContents module
 import { homeContents } from './homeContents';
 
+// Importing utility functions from the 'elementRender' module. These functions are used
+// for creating various HTML elements dynamically
 import {
     createSection,
     createDiv,
@@ -70,10 +72,10 @@ function createContentLeft() {
 }
 
 /**
- * Renders the content of a statistics item for display in a list item.
- * This function creates and returns a document fragment containing the stat's number and description.
- * @param {object} stat - The statistics data item, expected to have 'num' and 'text' properties.
- * @returns {DocumentFragment} - The document fragment containing the rendered content.
+ * Renders the content of a statistics item for display in a list item
+ * This function creates and returns a document fragment containing the stat's number and description
+ * @param {object} stat - The statistics data item, expected to have 'num' and 'text' properties
+ * @returns {DocumentFragment} - The document fragment containing the rendered content
  */
 function renderStatContent(stat) {
     const fragment = document.createDocumentFragment();
@@ -88,8 +90,8 @@ function renderStatContent(stat) {
 }
 
 /**
- * Creates the right section of the home page content including topper, title, paragraph, and image.
- * @returns {HTMLElement} - The created right content section.
+ * Creates the right section of the home page content including topper, title, paragraph, and image
+ * @returns {HTMLElement} - The created right content section
  */
 function createContentRight() {
     const contentRight = createDiv(attributeName.class, 'home-content-right');
