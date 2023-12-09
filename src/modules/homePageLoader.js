@@ -2,6 +2,8 @@ import { homeContents } from './homeContents';
 
 const HOME_PAGE_CONTENTS = homeContents[0];
 
+const attributeName = { id: 'id', class: 'class' };
+
 /**
  * Main function to load the content of home page
  */
@@ -10,8 +12,8 @@ export default function homePageLoader() {
     const mainContent = document.querySelector('#main-content');
 
     // Create and append the main section and content div
-    const section = createSection('home-content-container');
-    const homeContent = createDiv('home-content');
+    const section = createSection(attributeName.id, 'home-content-container');
+    const homeContent = createDiv(attributeName.class, 'home-content');
     mainContent.appendChild(section);
     section.appendChild(homeContent);
 
@@ -25,22 +27,24 @@ export default function homePageLoader() {
 /**
  * Creates a new section element with the given ID
  * @param {string} id - The ID to set for new element
- * @returns element
+ * @returns {HTMLElement} - The section element
  */
-function createSection(id) {
+
+function createSection(attributeName, attributeValue) {
     const section = document.createElement('section');
-    section.setAttribute('id', id);
+    section.setAttribute(attributeName, attributeValue);
     return section;
 }
 
 /**
- * Creates a new div element with given class name
- * @param {string} className - Class name to set for new div element
- * @returns element
+ * Creates a new div element with given attribute name and value
+ * @param {object} attributeName
+ * @param {string} attributeValue
+ * @returns {HTMLDivElement}
  */
-function createDiv(className) {
+function createDiv(attributeName, attributeValue) {
     const div = document.createElement('div');
-    div.setAttribute('class', className);
+    div.setAttribute(attributeName, attributeValue);
     return div;
 }
 
@@ -49,12 +53,17 @@ function createDiv(className) {
  * @returns element
  */
 function createContentLeft() {
-    const contentLeft = createDiv('home-content-left');
+    const contentLeft = createDiv(attributeName.class, 'home-content-left');
     const leftImage = createImage(
+        attributeName.class,
         'cs-picture cs-picture-left',
         HOME_PAGE_CONTENTS.imageLeft
     );
-    const statsList = createStatsList();
+    const statsList = createStatsList(
+        attributeName.class,
+        'cs-stats',
+        HOME_PAGE_CONTENTS.stats
+    );
 
     contentLeft.appendChild(leftImage);
     contentLeft.appendChild(statsList);
@@ -63,14 +72,15 @@ function createContentLeft() {
 }
 
 /**
- * Creates a picture element based on provided sources
- * @param {string} classNames - The class names for the picture element
- * @param {object} imageSources  - Image sources for different screen sizes
- * @returns element
+ * Creates a picture element bases on provided attributes and sources
+ * @param {object} attributeName - The attribute name
+ * @param {string} attributeValue  - The attribute value
+ * @param {object} imageSources - Image sources for different screen sizes
+ * @returns {HTMLPictureElement}
  */
-function createImage(classNames, imageSources) {
+function createImage(attributeName, attributeValue, imageSources) {
     const picture = document.createElement('picture');
-    picture.setAttribute('class', classNames);
+    picture.setAttribute(attributeName, attributeValue);
 
     Object.keys(imageSources).forEach((key) => {
         if (key === 'img') {
@@ -88,16 +98,28 @@ function createImage(classNames, imageSources) {
 }
 
 /**
- * Creates a list element containing stats
- * @returns element
+ * Creates a unordered list element containing data
+ * @param {string} className
+ * @param {object} data
+ * @returns {HTMLUListElement}
  */
-function createStatsList() {
-    const list = document.createElement('ul');
-    list.setAttribute('class', 'cs-stats');
 
-    for (let key in HOME_PAGE_CONTENTS.stats) {
-        if (HOME_PAGE_CONTENTS.stats.hasOwnProperty(key)) {
-            list.appendChild(createStatItem(HOME_PAGE_CONTENTS.stats[key]));
+/**
+ * Creates a unordered list element from attribute name and value containing data
+ * @param {object} attributeName
+ * @param {string} attributeValue
+ * @param {object} data
+ * @returns {HTMLUListElement}
+ */
+function createStatsList(attributeName, attributeValue, data) {
+    const list = document.createElement('ul');
+    list.setAttribute(attributeName, attributeValue);
+
+    for (let key in data) {
+        if (data.hasOwnProperty(key)) {
+            list.appendChild(
+                createStatItem(attributeName, 'cs-stat', data[key])
+            );
         }
     }
 
@@ -106,15 +128,15 @@ function createStatsList() {
 
 /**
  * Creates a list item for a single stat
- * @param {object} stat - Statistic data containing number and text
- * @returns element
+ * @param {object} data - Statistic data containing number or text
+ * @returns {HTMLLIElement}
  */
-function createStatItem(stat) {
+function createStatItem(attributeName, attributeValue, data) {
     const listItem = document.createElement('li');
-    listItem.setAttribute('class', 'cs-stat');
+    listItem.setAttribute(attributeName, attributeValue);
 
-    const numberSpan = createSpan('cs-number', stat.num);
-    const textSpan = createSpan('cs-desc', stat.text);
+    const numberSpan = createSpan(attributeName, 'cs-number', data.num);
+    const textSpan = createSpan(attributeName, 'cs-desc', data.text);
 
     listItem.appendChild(numberSpan);
     listItem.appendChild(textSpan);
@@ -128,9 +150,9 @@ function createStatItem(stat) {
  * @param {string} text - The text content for the span
  * @returns element
  */
-function createSpan(className, text) {
+function createSpan(attributeName, attributeValue, text) {
     const span = document.createElement('span');
-    span.setAttribute('class', className);
+    span.setAttribute(attributeName, attributeValue);
     span.innerText = text;
 
     return span;
@@ -141,11 +163,24 @@ function createSpan(className, text) {
  * @returns element
  */
 function createContentRight() {
-    const contentRight = createDiv('home-content-right');
-    const topper = createTopper('cs-topper');
-    const title = createTitle('cs-title');
-    const paragraph = createParagraph('cs-text');
+    const contentRight = createDiv(attributeName.class, 'home-content-right');
+    const topper = createTopper(
+        attributeName.class,
+        'cs-topper',
+        HOME_PAGE_CONTENTS.content.topper
+    );
+    const title = createTitle(
+        attributeName.class,
+        'cs-title',
+        HOME_PAGE_CONTENTS.content.title
+    );
+    const paragraph = createParagraph(
+        attributeName.class,
+        'cs-text',
+        HOME_PAGE_CONTENTS.content.paragraph
+    );
     const rightImage = createImage(
+        attributeName.class,
         'cs-picture cs-picture-right',
         HOME_PAGE_CONTENTS.imageRight
     );
@@ -163,23 +198,24 @@ function createContentRight() {
  * @param {string} className - The class name for the topper
  * @returns element
  */
-function createTopper(className) {
+function createTopper(attributeName, attributeValue, text) {
     const topper = document.createElement('span');
-    topper.setAttribute('class', className);
-    topper.innerText = HOME_PAGE_CONTENTS.content.topper;
+    topper.setAttribute(attributeName, attributeValue);
+    topper.innerText = text;
 
     return topper;
 }
 
 /**
- * Creates a title element with given class name
+ * Creates a title element h2 with given class name
  * @param {string} className - The class name for the title
- * @returns element
+ * @param {string} text - The text content for the title
+ * @returns {HTMLHeadingElement}
  */
-function createTitle(className) {
+function createTitle(attributeName, attributeValue, text) {
     const title = document.createElement('h2');
-    title.setAttribute('class', className);
-    title.textContent = HOME_PAGE_CONTENTS.content.title;
+    title.setAttribute(attributeName, attributeValue);
+    title.textContent = text;
 
     return title;
 }
@@ -189,10 +225,10 @@ function createTitle(className) {
  * @param {string} className - The class name for the paragraph
  * @returns element
  */
-function createParagraph(className) {
+function createParagraph(attributeName, attributeValue, text) {
     const paragraph = document.createElement('p');
-    paragraph.setAttribute('class', className);
-    paragraph.textContent = HOME_PAGE_CONTENTS.content.paragraph;
+    paragraph.setAttribute(attributeName, attributeValue);
+    paragraph.textContent = text;
 
     return paragraph;
 }
