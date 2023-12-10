@@ -46,6 +46,33 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
+                        srcset: '011a6a691872d268eccc.png',
+                    },
+                    tabletImage: {
+                        media: '(max-width: 601px)',
+                        srcset: '011a6a691872d268eccc.png',
+                    },
+                    img: {
+                        loading: 'lazy',
+                        decoding: 'async',
+                        src: '011a6a691872d268eccc.png',
+                        alt: 'people',
+                        width: '160',
+                        height: '160',
+                    },
+                },
+            },
+            listItemThree: {
+                info: {
+                    name: 'Curried Chicken Salad with Mango',
+                    price: '56€',
+                    itemParagraph: `A refreshing mix of tender curried chicken and sweet
+                    mango slices, tossed with vibrant greens for a light yet
+                    flavorful salad.`,
+                },
+                picture: {
+                    mobileImage: {
+                        media: '(max-width: 600px)',
                         srcset: 'd4346084ebcebb8c4917.png',
                     },
                     tabletImage: {
@@ -62,13 +89,13 @@ export let menuContents = [
                     },
                 },
             },
-            listItemThree: {
+            listItemFour: {
                 info: {
-                    name: 'Curried Chicken Salad with Mango',
+                    name: `Meat Lovers' Sheet Pan Pizza`,
                     price: '56€',
-                    itemParagraph: `A refreshing mix of tender curried chicken and sweet
-                    mango slices, tossed with vibrant greens for a light yet
-                    flavorful salad.`,
+                    itemParagraph: `Loaded with an assortment of meats like pepperoni,
+                    sausage, and bacon, this pizza offers a carnivore's
+                    delight with every crispy, cheesy bite.`,
                 },
                 picture: {
                     mobileImage: {
@@ -89,13 +116,13 @@ export let menuContents = [
                     },
                 },
             },
-            listItemFour: {
+            listItemFive: {
                 info: {
-                    name: `Meat Lovers' Sheet Pan Pizza`,
+                    name: `Purple Corn Tostada`,
                     price: '56€',
-                    itemParagraph: `Loaded with an assortment of meats like pepperoni,
-                    sausage, and bacon, this pizza offers a carnivore's
-                    delight with every crispy, cheesy bite.`,
+                    itemParagraph: `A feast for the eyes and the palate, this tostada uses a
+                    unique purple corn shell, piled high with seasoned meats
+                    and fresh toppings for a crunchy, savory treat.`,
                 },
                 picture: {
                     mobileImage: {
@@ -110,33 +137,6 @@ export let menuContents = [
                         loading: 'lazy',
                         decoding: 'async',
                         src: '4ea097f917d537a08ade.png',
-                        alt: 'people',
-                        width: '160',
-                        height: '160',
-                    },
-                },
-            },
-            listItemFive: {
-                info: {
-                    name: `Purple Corn Tostada`,
-                    price: '56€',
-                    itemParagraph: `A feast for the eyes and the palate, this tostada uses a
-                    unique purple corn shell, piled high with seasoned meats
-                    and fresh toppings for a crunchy, savory treat.`,
-                },
-                picture: {
-                    mobileImage: {
-                        media: '(max-width: 600px)',
-                        srcset: '9d0615d98829c157add9.png',
-                    },
-                    tabletImage: {
-                        media: '(max-width: 601px)',
-                        srcset: '9d0615d98829c157add9.png',
-                    },
-                    img: {
-                        loading: 'lazy',
-                        decoding: 'async',
-                        src: '9d0615d98829c157add9.png',
                         alt: 'people',
                         width: '160',
                         height: '160',
