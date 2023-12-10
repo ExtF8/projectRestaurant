@@ -64,6 +64,7 @@ function renderCardGroup() {
 function renderListItemContent(itemData) {
     const fragment = document.createDocumentFragment();
     const picture = createPicture('class', 'cs-picture', itemData.picture);
+    picture.setAttribute('area-hidden', 'true')
 
     const info = createDiv('class', 'cs-info');
 
