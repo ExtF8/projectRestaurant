@@ -27,7 +27,7 @@ const attributeName = { id: 'id', class: 'class' };
  */
 export default function homePageLoader(content) {
     clearPage(content);
-    
+
     // Select the main content area in the DOM
     const mainContent = content;
 

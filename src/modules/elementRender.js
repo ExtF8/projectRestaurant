@@ -168,12 +168,23 @@ export function setAttributes(element, attributes) {
     });
 }
 
+/**
+ * Clears the content of a specified parent element
+ * @param {HTMLElement} parent - The parent element whose content is to be cleared
+ * @returns {boolean} - Returns true to indicate the operation was successful
+ */
 export function clearPage(parent) {
     parent.textContent = '';
 
     return true;
 }
 
+/**
+ * Changes the active state between two button elements
+ * @param {string} oldTab - The ID of the previously active tab/button
+ * @param {string} newTab - The ID of the tab/button to be activated
+ * @returns {string} - Returns the ID of the newly activated tab/button
+ */
 export function changeButtonCover(oldTab, newTab) {
     let show = document.getElementById(`${oldTab}`);
     let hide = document.getElementById(`${newTab}`);
