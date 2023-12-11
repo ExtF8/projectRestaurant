@@ -12,6 +12,7 @@ import {
     createSpan,
     createTitle,
     createParagraph,
+    clearPage,
 } from './elementRender.js';
 
 // Extracting the first item from menu contents to use as menu page content
@@ -20,9 +21,11 @@ const MENU_PAGE_CONTENTS = menuContents[0];
 /**
  * Main function to load and display the menu page content
  */
-export default function menuPageLoader() {
+export default function menuPageLoader(content) {
+    clearPage(content);
+
     // Select the main content area of the DOM
-    const mainContent = document.querySelector('#main-content');
+    const mainContent = content;
 
     // Create a section for the menu and append it to the main content
     const section = createSection('id', 'menu-1005');

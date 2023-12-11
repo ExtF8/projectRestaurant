@@ -56,7 +56,12 @@ export function createPicture(attributeName, attributeValue, imageSources) {
  * @param {Function} renderItem - export function that takes an item of data and returns a list item (li) element
  * @returns {HTMLUListElement} - The created unordered list element
  */
-export function createList(attributeName, attributeValue, itemData, renderItem) {
+export function createList(
+    attributeName,
+    attributeValue,
+    itemData,
+    renderItem
+) {
     const list = document.createElement('ul');
     list.setAttribute(attributeName, attributeValue);
 
@@ -161,4 +166,20 @@ export function setAttributes(element, attributes) {
     Object.keys(attributes).forEach((attr) => {
         element.setAttribute(attr, attributes[attr]);
     });
+}
+
+export function clearPage(parent) {
+    parent.textContent = '';
+
+    return true;
+}
+
+export function changeButtonCover(oldTab, newTab) {
+    let show = document.getElementById(`${oldTab}`);
+    let hide = document.getElementById(`${newTab}`);
+
+    show.classList.remove('cs-active');
+    hide.classList.add('cs-active');
+
+    return newTab;
 }

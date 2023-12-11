@@ -13,6 +13,7 @@ import {
     createTopper,
     createTitle,
     createParagraph,
+    clearPage,
 } from './elementRender.js';
 
 // Extracting the first item from home contents to use as home page content
@@ -24,9 +25,11 @@ const attributeName = { id: 'id', class: 'class' };
 /**
  * Loads and displays the home page content
  */
-export default function homePageLoader() {
+export default function homePageLoader(content) {
+    clearPage(content);
+    
     // Select the main content area in the DOM
-    const mainContent = document.querySelector('#main-content');
+    const mainContent = content;
 
     // Create and append the main section and content div
     const section = createSection(attributeName.id, 'home-content-container');
@@ -80,7 +83,11 @@ function renderContentLeft() {
 function renderListItemContent(itemData) {
     const fragment = document.createDocumentFragment();
 
-    const numberSpan = createSpan(attributeName.class, 'cs-number', itemData.num);
+    const numberSpan = createSpan(
+        attributeName.class,
+        'cs-number',
+        itemData.num
+    );
     const textSpan = createSpan(attributeName.class, 'cs-desc', itemData.text);
 
     fragment.appendChild(numberSpan);

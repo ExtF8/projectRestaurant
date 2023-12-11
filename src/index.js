@@ -7,6 +7,7 @@ import mobileNavigationToggling from './modules/mobileNavigation';
 
 import homePageLoader from './modules/homePageLoader.js';
 import menuPageLoader from './modules/menuPageLoader.js';
+import { changeButtonCover } from './modules/elementRender.js';
 
 import homePageLeft from './assets/img/homePageLeft.png';
 import homePageRight from './assets/img/homePageRight.png';
@@ -24,13 +25,10 @@ mobileNavigationToggling();
 // Set globals
 let pageNames = ['home', 'menu', 'contacts'];
 let currentTab = pageNames[0];
-let mainContent = document.getElementById('#main-content');
+let content = document.querySelector('#main-content');
 
 // Initial home page load
-// loadMain(currentTab, content, reviews, homeTitle, info);
-
-// homePageLoader();
-menuPageLoader();
+homePageLoader(content);
 
 // Set click events for tab navigation
 pageNames.forEach((pageName) => {
@@ -39,28 +37,11 @@ pageNames.forEach((pageName) => {
         currentTab = changeButtonCover(currentTab, button.id);
 
         if (button.id == 'home') {
-            console.log('home');
-            // homePageLoader();
-            //   loadMain(button.id, content, reviews, homeTitle, info);
+            homePageLoader(content);
         } else if (button.id == 'menu') {
-            console.log('menu');
-            menuPageLoader();
-
-            //   loadMain(button.id, content, menu, menuTitle);
+            menuPageLoader(content);
         } else {
             console.log('contacts');
-
-            //   loadMain(button.id, content, contacts, contactTitle);
         }
     });
 });
-
-function changeButtonCover(oldTab, newTab) {
-    let show = document.getElementById(`${oldTab}`);
-    let hide = document.getElementById(`${newTab}`);
-
-    hide.classList.add('cs-active');
-    show.classList.remove('cs-active');
-
-    return newTab;
-}
