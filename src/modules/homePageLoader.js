@@ -35,17 +35,17 @@ export default function homePageLoader() {
     section.appendChild(homeContent);
 
     // Create and append left and right content sections
-    const contentLeft = createContentLeft();
-    const contentRight = createContentRight();
+    const contentLeft = renderContentLeft();
+    const contentRight = renderContentRight();
     homeContent.appendChild(contentLeft);
     homeContent.appendChild(contentRight);
 }
 
 /**
- * Creates the left section of the home page content including image and stats
+ * Renders the left section of the home page content including image and stats
  * @returns {HTMLElement}
  */
-function createContentLeft() {
+function renderContentLeft() {
     const contentLeft = createDiv(attributeName.class, 'home-content-left');
     const leftImage = createPicture(
         attributeName.class,
@@ -56,12 +56,12 @@ function createContentLeft() {
         attributeName.class,
         'cs-stats',
         HOME_PAGE_CONTENTS.stats,
-        (stat) =>
+        (itemData) =>
             createListItem(
                 attributeName.class,
                 'cs-stat',
-                stat,
-                renderStatContent
+                itemData,
+                renderListItemContent
             )
     );
 
@@ -74,14 +74,14 @@ function createContentLeft() {
 /**
  * Renders the content of a statistics item for display in a list item
  * This function creates and returns a document fragment containing the stat's number and description
- * @param {object} stat - The statistics data item, expected to have 'num' and 'text' properties
+ * @param {object} itemData - The statistics data item, expected to have 'num' and 'text' properties
  * @returns {DocumentFragment} - The document fragment containing the rendered content
  */
-function renderStatContent(stat) {
+function renderListItemContent(itemData) {
     const fragment = document.createDocumentFragment();
 
-    const numberSpan = createSpan(attributeName.class, 'cs-number', stat.num);
-    const textSpan = createSpan(attributeName.class, 'cs-desc', stat.text);
+    const numberSpan = createSpan(attributeName.class, 'cs-number', itemData.num);
+    const textSpan = createSpan(attributeName.class, 'cs-desc', itemData.text);
 
     fragment.appendChild(numberSpan);
     fragment.appendChild(textSpan);
@@ -90,10 +90,10 @@ function renderStatContent(stat) {
 }
 
 /**
- * Creates the right section of the home page content including topper, title, paragraph, and image
+ * Renders the right section of the home page content including topper, title, paragraph, and image
  * @returns {HTMLElement} - The created right content section
  */
-function createContentRight() {
+function renderContentRight() {
     const contentRight = createDiv(attributeName.class, 'home-content-right');
     const topper = createTopper(
         attributeName.class,
