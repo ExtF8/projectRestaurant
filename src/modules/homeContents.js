@@ -1,4 +1,7 @@
-let homeContents = [
+import homePageLeft from '../assets/img/homePageLeft.png';
+import homePageRight from '../assets/img/homePageRight.png';
+
+export let homeContents = [
     {
         content: {
             topper: 'Do you like food?',
@@ -15,16 +18,16 @@ let homeContents = [
         imageLeft: {
             mobileImage: {
                 media: '(max-width: 600px)',
-                srcset: '74d0a0d0d5ba4c16fab5.png',
+                srcset: homePageLeft,
             },
             tabletImage: {
                 media: '(max-width: 601px)',
-                srcset: '74d0a0d0d5ba4c16fab5.png',
+                srcset: homePageLeft,
             },
             img: {
                 loading: 'lazy',
                 decoding: 'async',
-                src: '74d0a0d0d5ba4c16fab5.png',
+                src: homePageLeft,
                 alt: 'people',
                 width: '608',
                 height: '406',
@@ -33,16 +36,16 @@ let homeContents = [
         imageRight: {
             mobileImage: {
                 media: '(max-width: 600px)',
-                srcset: '7aae6a15ce7d1a7a24e7.png',
+                srcset: homePageRight,
             },
             tabletImage: {
                 media: '(max-width: 601px)',
-                srcset: '7aae6a15ce7d1a7a24e7.png',
+                srcset: homePageRight,
             },
             img: {
                 loading: 'lazy',
                 decoding: 'async',
-                src: '7aae6a15ce7d1a7a24e7.png',
+                src: homePageRight,
                 alt: 'people',
                 width: '608',
                 height: '662',
@@ -51,18 +54,16 @@ let homeContents = [
         stats: {
             firstStat: {
                 num: '99%',
-                text: 'Positive customer reviews'
+                text: 'Positive customer reviews',
             },
             secondStat: {
                 num: '10',
-                text: `Dish 'Try Again' Special`
+                text: `Dish 'Try Again' Special`,
             },
             thirdStat: {
                 num: '24/7',
-                text: 'Online reservation and inquiry service'
-            }
-        }
+                text: 'Online reservation and inquiry service',
+            },
+        },
     },
 ];
-
-export { homeContents };
