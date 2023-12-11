@@ -35,17 +35,17 @@ export default function homePageLoader() {
     section.appendChild(homeContent);
 
     // Create and append left and right content sections
-    const contentLeft = createContentLeft();
-    const contentRight = createContentRight();
+    const contentLeft = renderContentLeft();
+    const contentRight = renderContentRight();
     homeContent.appendChild(contentLeft);
     homeContent.appendChild(contentRight);
 }
 
 /**
- * Creates the left section of the home page content including image and stats
+ * Renders the left section of the home page content including image and stats
  * @returns {HTMLElement}
  */
-function createContentLeft() {
+function renderContentLeft() {
     const contentLeft = createDiv(attributeName.class, 'home-content-left');
     const leftImage = createPicture(
         attributeName.class,
@@ -90,10 +90,10 @@ function renderListItemContent(itemData) {
 }
 
 /**
- * Creates the right section of the home page content including topper, title, paragraph, and image
+ * Renders the right section of the home page content including topper, title, paragraph, and image
  * @returns {HTMLElement} - The created right content section
  */
-function createContentRight() {
+function renderContentRight() {
     const contentRight = createDiv(attributeName.class, 'home-content-right');
     const topper = createTopper(
         attributeName.class,
