@@ -52,17 +52,17 @@ export function createPicture(attributeName, attributeValue, imageSources) {
  * Creates a list (ul) element with provided attributes. The list items are created using a rendering export function passed as an argument
  * @param {string} attributeName - Name of the attribute (e.g., 'class')
  * @param {string} attributeValue - Value for the attribute (e.g., 'cs-stats')
- * @param {object} data - Data to populate the list with. Expects an object where each property can be rendered as a list item
+ * @param {object} itemData - Data to populate the list with. Expects an object where each property can be rendered as a list item
  * @param {Function} renderItem - export function that takes an item of data and returns a list item (li) element
  * @returns {HTMLUListElement} - The created unordered list element
  */
-export function createList(attributeName, attributeValue, data, renderItem) {
+export function createList(attributeName, attributeValue, itemData, renderItem) {
     const list = document.createElement('ul');
     list.setAttribute(attributeName, attributeValue);
 
-    for (let key in data) {
-        if (data.hasOwnProperty(key)) {
-            list.appendChild(renderItem(data[key]));
+    for (let key in itemData) {
+        if (itemData.hasOwnProperty(key)) {
+            list.appendChild(renderItem(itemData[key]));
         }
     }
 

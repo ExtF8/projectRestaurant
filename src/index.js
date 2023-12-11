@@ -29,7 +29,9 @@ let mainContent = document.getElementById('#main-content');
 // Initial home page load
 // loadMain(currentTab, content, reviews, homeTitle, info);
 
-homePageLoader();
+// homePageLoader();
+menuPageLoader();
+
 // Set click events for tab navigation
 pageNames.forEach((pageName) => {
     const button = document.getElementById(pageName);
@@ -38,7 +40,7 @@ pageNames.forEach((pageName) => {
 
         if (button.id == 'home') {
             console.log('home');
-            homePageLoader();
+            // homePageLoader();
             //   loadMain(button.id, content, reviews, homeTitle, info);
         } else if (button.id == 'menu') {
             console.log('menu');
@@ -54,8 +56,8 @@ pageNames.forEach((pageName) => {
 });
 
 function changeButtonCover(oldTab, newTab) {
-    let hide = document.getElementById(`${newTab}`);
     let show = document.getElementById(`${oldTab}`);
+    let hide = document.getElementById(`${newTab}`);
 
     hide.classList.add('cs-active');
     show.classList.remove('cs-active');
