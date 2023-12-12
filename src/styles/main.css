@@ -7,6 +7,10 @@
         overflow: hidden;
     }
 
+    #main-content {
+        padding-top: 18%;
+    }
+
     #cs-navigation {
         width: 100%;
         box-sizing: border-box;
