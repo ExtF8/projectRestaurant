@@ -7,6 +7,10 @@
         overflow: hidden;
     }
 
+    #main-content {
+        padding-top: 18%;
+    }
+
     #cs-navigation {
         width: 100%;
         box-sizing: border-box;
@@ -950,6 +954,28 @@
         background-color: #f7f7f7;
         height: 100%;
 
+    }
+
+    #contact-strip-324 .cs-container {
+        width: 100%;
+        max-width: 80em;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 7vw, 4rem);
+    }
+
+    #contact-strip-324 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
     }
 
     #contact-strip-324 .cs-stat-group {

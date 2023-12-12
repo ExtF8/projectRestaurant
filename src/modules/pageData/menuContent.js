@@ -1,3 +1,10 @@
+import burger from '../../assets/img/menu/bisonBurger.png';
+import chicken from '../../assets/img/menu/chickenSaladMango.png';
+import lasagna from '../../assets/img/menu/lasagna.png';
+import pizza from '../../assets/img/menu/meatLoversPizza.png';
+import sauce from '../../assets/img/menu/pricklyPearPorkSauce.png';
+import tostada from '../../assets/img/menu/purpleCornTostada.png';
+
 export let menuContents = [
     {
         content: {
@@ -19,16 +26,16 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
-                        srcset: '7417ae8cfd1c6d06e004.png',
+                        srcset: lasagna,
                     },
                     tabletImage: {
                         media: '(max-width: 601px)',
-                        srcset: '7417ae8cfd1c6d06e004.png',
+                        srcset: lasagna,
                     },
                     img: {
                         loading: 'lazy',
                         decoding: 'async',
-                        src: '7417ae8cfd1c6d06e004.png',
+                        src: lasagna,
                         alt: 'people',
                         width: '160',
                         height: '160',
@@ -46,16 +53,16 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
-                        srcset: '011a6a691872d268eccc.png',
+                        srcset: burger,
                     },
                     tabletImage: {
                         media: '(max-width: 601px)',
-                        srcset: '011a6a691872d268eccc.png',
+                        srcset: burger,
                     },
                     img: {
                         loading: 'lazy',
                         decoding: 'async',
-                        src: '011a6a691872d268eccc.png',
+                        src: burger,
                         alt: 'people',
                         width: '160',
                         height: '160',
@@ -73,16 +80,16 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
-                        srcset: 'd4346084ebcebb8c4917.png',
+                        srcset: chicken,
                     },
                     tabletImage: {
                         media: '(max-width: 601px)',
-                        srcset: 'd4346084ebcebb8c4917.png',
+                        srcset: chicken,
                     },
                     img: {
                         loading: 'lazy',
                         decoding: 'async',
-                        src: 'd4346084ebcebb8c4917.png',
+                        src: chicken,
                         alt: 'people',
                         width: '160',
                         height: '160',
@@ -100,16 +107,16 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
-                        srcset: '20fa9af26692e16da47b.png',
+                        srcset: pizza,
                     },
                     tabletImage: {
                         media: '(max-width: 601px)',
-                        srcset: '20fa9af26692e16da47b.png',
+                        srcset: pizza,
                     },
                     img: {
                         loading: 'lazy',
                         decoding: 'async',
-                        src: '20fa9af26692e16da47b.png',
+                        src: pizza,
                         alt: 'people',
                         width: '160',
                         height: '160',
@@ -127,16 +134,16 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
-                        srcset: '4ea097f917d537a08ade.png',
+                        srcset: tostada,
                     },
                     tabletImage: {
                         media: '(max-width: 601px)',
-                        srcset: '4ea097f917d537a08ade.png',
+                        srcset: tostada,
                     },
                     img: {
                         loading: 'lazy',
                         decoding: 'async',
-                        src: '4ea097f917d537a08ade.png',
+                        src: tostada,
                         alt: 'people',
                         width: '160',
                         height: '160',
@@ -154,16 +161,16 @@ export let menuContents = [
                 picture: {
                     mobileImage: {
                         media: '(max-width: 600px)',
-                        srcset: '9d0615d98829c157add9.png',
+                        srcset: sauce,
                     },
                     tabletImage: {
                         media: '(max-width: 601px)',
-                        srcset: '9d0615d98829c157add9.png',
+                        srcset: sauce,
                     },
                     img: {
                         loading: 'lazy',
                         decoding: 'async',
-                        src: '9d0615d98829c157add9.png',
+                        src: sauce,
                         alt: 'people',
                         width: '160',
                         height: '160',
