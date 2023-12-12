@@ -56,7 +56,12 @@ export function createPicture(attributeName, attributeValue, imageSources) {
  * @param {Function} renderItem - export function that takes an item of data and returns a list item (li) element
  * @returns {HTMLUListElement} - The created unordered list element
  */
-export function createList(attributeName, attributeValue, itemData, renderItem) {
+export function createList(
+    attributeName,
+    attributeValue,
+    itemData,
+    renderItem
+) {
     const list = document.createElement('ul');
     list.setAttribute(attributeName, attributeValue);
 
@@ -161,4 +166,48 @@ export function setAttributes(element, attributes) {
     Object.keys(attributes).forEach((attr) => {
         element.setAttribute(attr, attributes[attr]);
     });
+}
+
+/**
+ * Clears the content of a specified parent element
+ * @param {HTMLElement} parent - The parent element whose content is to be cleared
+ * @returns {boolean} - Returns true to indicate the operation was successful
+ */
+export function clearPage(parent) {
+    parent.textContent = '';
+
+    return true;
+}
+
+/**
+ * Changes the active state between two button elements
+ * @param {string} oldTab - The ID of the previously active tab/button
+ * @param {string} newTab - The ID of the tab/button to be activated
+ * @returns {string} - Returns the ID of the newly activated tab/button
+ */
+export function changeButtonCover(oldTab, newTab) {
+    let show = document.getElementById(`${oldTab}`);
+    let hide = document.getElementById(`${newTab}`);
+
+    show.classList.remove('cs-active');
+    hide.classList.add('cs-active');
+
+    return newTab;
+}
+
+/**
+ * Creates a link (anchor) element with specified attributes and text content.
+ * @param {string} attributeName - The attribute name to set on the link (e.g., 'href').
+ * @param {string} attributeValue - The value for the attribute.
+ * @param {string} className - The class attribute for the link.
+ * @param {string} text - The text content for the link.
+ * @returns {HTMLAnchorElement} - The created anchor element.
+ */
+export function createLink(href, hrefValue, attributeName, attributeValue, text) {
+    const link = document.createElement('a');
+    link.setAttribute(href, hrefValue);
+    link.innerText = text;
+    link.setAttribute(attributeName, attributeValue);
+    link.setAttribute('target', '_blank')
+    return link;
 }

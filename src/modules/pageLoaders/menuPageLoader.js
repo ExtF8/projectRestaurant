@@ -1,5 +1,5 @@
 // Importing menu contents data form menuContents module
-import { menuContents } from './menuContent.js';
+import { menuContents } from '../pageData/menuContent.js';
 
 // Importing utility functions from the 'elementRenderer' module. These functions are used
 // for creating various HTML elements dynamically
@@ -12,7 +12,8 @@ import {
     createSpan,
     createTitle,
     createParagraph,
-} from './elementRender.js';
+    clearPage,
+} from '../utility/elementRender.js';
 
 // Extracting the first item from menu contents to use as menu page content
 const MENU_PAGE_CONTENTS = menuContents[0];
@@ -20,9 +21,11 @@ const MENU_PAGE_CONTENTS = menuContents[0];
 /**
  * Main function to load and display the menu page content
  */
-export default function menuPageLoader() {
+export default function menuPageLoader(content) {
+    clearPage(content);
+
     // Select the main content area of the DOM
-    const mainContent = document.querySelector('#main-content');
+    const mainContent = content;
 
     // Create a section for the menu and append it to the main content
     const section = createSection('id', 'menu-1005');

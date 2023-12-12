@@ -1,66 +1,52 @@
+// Importing global, main, and dark mode CSS stylesheets
 import './styles/global.css';
 import './styles/main.css';
 import './styles/dark.css';
 
-import darkModeToggler from './modules/darkMode';
-import mobileNavigationToggling from './modules/mobileNavigation';
+// Importing functionality modules
+import darkModeToggler from './modules/utility/darkMode.js';
+import mobileNavigationToggling from './modules/utility/mobileNavigation.js';
 
-import homePageLoader from './modules/homePageLoader.js';
-import menuPageLoader from './modules/menuPageLoader.js';
+// Importing page loader functions
+import homePageLoader from './modules/pageLoaders/homePageLoader.js';
+import menuPageLoader from './modules/pageLoaders/menuPageLoader.js';
+import contactsPageLoader from './modules/pageLoaders/contactsPageLoader.js';
 
-import homePageLeft from './assets/img/homePageLeft.png';
-import homePageRight from './assets/img/homePageRight.png';
+// Importing utility function for changing button appearance
+import { changeButtonCover } from './modules/utility/elementRender.js';
 
-import burger from './assets/img/menu/bisonBurger.png';
-import chicken from './assets/img/menu/chickenSaladMango.png';
-import lasagna from './assets/img/menu/lasagna.png';
-import pizza from './assets/img/menu/meatLoversPizza.png';
-import sauce from './assets/img/menu/pricklyPearPorkSauce.png';
-import tostada from './assets/img/menu/purpleCornTostada.png';
-
+// Activate dark mode toggle functionality
 darkModeToggler();
+
+// Set up mobile navigation toggle functionality
 mobileNavigationToggling();
 
-// Set globals
+// Global variables setup
 let pageNames = ['home', 'menu', 'contacts'];
 let currentTab = pageNames[0];
-let mainContent = document.getElementById('#main-content');
+let content = document.querySelector('#main-content');
 
-// Initial home page load
-// loadMain(currentTab, content, reviews, homeTitle, info);
+// Load the initial home page content
+homePageLoader(content);
 
-// homePageLoader();
-menuPageLoader();
-
-// Set click events for tab navigation
+/**
+ * Set up click event listeners for tab navigation in the header.
+ * This allows switching between different pages (home, menu, contacts) and
+ * ensures the appropriate content is loaded and displayed.
+ */
 pageNames.forEach((pageName) => {
     const button = document.getElementById(pageName);
     button.addEventListener('click', () => {
         currentTab = changeButtonCover(currentTab, button.id);
 
         if (button.id == 'home') {
-            console.log('home');
-            // homePageLoader();
-            //   loadMain(button.id, content, reviews, homeTitle, info);
+            homePageLoader(content);
         } else if (button.id == 'menu') {
-            console.log('menu');
-            menuPageLoader();
-
-            //   loadMain(button.id, content, menu, menuTitle);
+            menuPageLoader(content);
         } else {
-            console.log('contacts');
+            contactsPageLoader(content);
 
-            //   loadMain(button.id, content, contacts, contactTitle);
+            console.log('contacts');
         }
     });
 });
-
-function changeButtonCover(oldTab, newTab) {
-    let show = document.getElementById(`${oldTab}`);
-    let hide = document.getElementById(`${newTab}`);
-
-    hide.classList.add('cs-active');
-    show.classList.remove('cs-active');
-
-    return newTab;
-}

@@ -1,8 +1,11 @@
-// add classes for mobile navigation toggling
+// Select DOM elements for mobile navigation
 var CSbody = document.querySelector('body');
 const CSnavbarMenu = document.querySelector('#cs-navigation');
 const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
+/**
+ * Sets up event listeners for mobile navigation toggling
+ */
 export default function mobileNavigationToggling() {
     CShamburgerMenu.addEventListener('click', function () {
         CShamburgerMenu.classList.toggle('cs-active');
@@ -12,11 +15,14 @@ export default function mobileNavigationToggling() {
         ariaExpanded();
     });
 
-    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    /**
+     * Checks and toggles the 'aria-expanded' attribute on the navigation list
+     */
     function ariaExpanded() {
         const csUL = document.querySelector('#cs-expanded');
         const csExpanded = csUL.getAttribute('aria-expanded');
 
+        // Toggle the 'aria-expanded' attribute based on its current state.
         if (csExpanded === 'false') {
             csUL.setAttribute('aria-expanded', 'true');
         } else {
@@ -24,7 +30,7 @@ export default function mobileNavigationToggling() {
         }
     }
 
-    // mobile nav toggle code
+    // Set up click event listeners for dropdown items in the mobile navigation
     const dropDowns = Array.from(
         document.querySelectorAll('#cs-navigation .cs-dropdown')
     );
