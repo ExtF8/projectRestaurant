@@ -1,5 +1,5 @@
-import homePageLeft from '../../assets/img/homePageLeft.png';
-import homePageRight from '../../assets/img/homePageRight.png';
+import homePageLeft from '../../assets/img/home/homePageLeft.jpg';
+import homePageRight from '../../assets/img/home/homePageRight.jpg';
 
 export let homeContents = [
     {
