@@ -1,5 +1,5 @@
 // Select DOM elements for mobile navigation
-var CSbody = document.querySelector('body');
+const CSbody = document.querySelector('body');
 const CSnavbarMenu = document.querySelector('#cs-navigation');
 const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 

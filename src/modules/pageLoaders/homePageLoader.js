@@ -24,6 +24,7 @@ const attributeName = { id: 'id', class: 'class' };
 
 /**
  * Loads and displays the home page content
+ * @param {HTMLElement} content - The parent element where the home page will be rendered
  */
 export default function homePageLoader(content) {
     clearPage(content);
