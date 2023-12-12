@@ -200,12 +200,13 @@ export function changeButtonCover(oldTab, newTab) {
 }
 
 /**
- * Creates a link (anchor) element with specified attributes and text content.
- * @param {string} attributeName - The attribute name to set on the link (e.g., 'href').
- * @param {string} attributeValue - The value for the attribute.
- * @param {string} className - The class attribute for the link.
- * @param {string} text - The text content for the link.
- * @returns {HTMLAnchorElement} - The created anchor element.
+ * Creates a link (anchor) element with specified attributes and text content
+ * @param {string} href - The attribute name to set on the link (e.g., 'href')
+ * @param {string} hrefValue - The value for the href attribute
+ * @param {string} attributeName - the Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - The value for the attribute
+ * @param {string} text - The text content for the link
+ * @returns {HTMLAnchorElement} - The created anchor element
  */
 export function createLink(
     href,

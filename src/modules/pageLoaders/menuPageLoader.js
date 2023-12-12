@@ -21,6 +21,7 @@ const MENU_PAGE_CONTENTS = menuContents[0];
 
 /**
  * Main function to load and display the menu page content
+ * @param {HTMLElement} content - The parent element where the menu page will be rendered
  */
 export default function menuPageLoader(content) {
     clearPage(content);

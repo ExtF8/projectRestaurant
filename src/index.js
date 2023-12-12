@@ -30,9 +30,9 @@ let content = document.querySelector('#main-content');
 homePageLoader(content);
 
 /**
- * Set up click event listeners for tab navigation in the header.
+ * Set up click event listeners for tab navigation in the header
  * This allows switching between different pages (home, menu, contacts) and
- * ensures the appropriate content is loaded and displayed.
+ * ensures the appropriate content is loaded and displayed
  */
 pageNames.forEach((pageName) => {
     const button = document.getElementById(pageName);
