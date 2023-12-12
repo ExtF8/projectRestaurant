@@ -46,18 +46,28 @@ pageNames.forEach((pageName) => {
 });
 
 /**
- * Updates the active state of navigation buttons
+ * Updates the active state of navigation buttons and removes active state in mobile navigation
  * @param {string} activeButtonId - The ID of the navigation button to be marked as active
  */
 export function updateNavigationActiveState(activeButtonId) {
     // Navigation button IDs
     const navigationButtons = ['home', 'menu', 'contacts'];
 
+    // Selecting elements related to mobile navigation
+    const body = document.querySelector('body');
+    const navbarMenu = document.querySelector('#cs-navigation');
+    const hamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+
     navigationButtons.forEach((buttonId) => {
         const buttonElement = document.getElementById(buttonId);
         if (buttonElement) {
             if (buttonId === activeButtonId) {
                 buttonElement.classList.add('cs-active');
+
+                // Close mobile navigation menu when a navigation button is activated
+                hamburgerMenu.classList.remove('cs-active');
+                navbarMenu.classList.remove('cs-active');
+                body.classList.remove('cs-open');
             } else {
                 buttonElement.classList.remove('cs-active');
             }
