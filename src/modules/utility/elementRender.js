@@ -186,11 +186,15 @@ export function clearPage(parent) {
  * @returns {string} - Returns the ID of the newly activated tab/button
  */
 export function changeButtonCover(oldTab, newTab) {
-    let show = document.getElementById(`${oldTab}`);
-    let hide = document.getElementById(`${newTab}`);
+    let currentActive = document.getElementById(oldTab);
+    let newActive = document.getElementById(newTab);
 
-    show.classList.remove('cs-active');
-    hide.classList.add('cs-active');
+    if (currentActive) {
+        currentActive.classList.remove('cs-active');
+    }
+    if (newActive) {
+        newActive.classList.add('cs-active');
+    }
 
     return newTab;
 }
@@ -203,11 +207,19 @@ export function changeButtonCover(oldTab, newTab) {
  * @param {string} text - The text content for the link.
  * @returns {HTMLAnchorElement} - The created anchor element.
  */
-export function createLink(href, hrefValue, attributeName, attributeValue, text) {
+export function createLink(
+    href,
+    hrefValue,
+    attributeName,
+    attributeValue,
+    text
+) {
     const link = document.createElement('a');
+
     link.setAttribute(href, hrefValue);
     link.innerText = text;
     link.setAttribute(attributeName, attributeValue);
-    link.setAttribute('target', '_blank')
+    link.setAttribute('target', '_blank');
+
     return link;
 }

@@ -13,6 +13,7 @@ import {
     createTitle,
     createParagraph,
     clearPage,
+    changeButtonCover,
 } from '../utility/elementRender.js';
 
 // Extracting the first item from menu contents to use as menu page content
@@ -147,15 +148,23 @@ function renderHeadingContainer(itemData) {
 }
 
 /**
- * Creates a button for reserving a table
+ * Creates a button for reserving a table, navigating to contacts page
  * @returns {HTMLAnchorElement} - The reserve button element
  */
 function createReserveButton() {
     const reserveButton = document.createElement('a');
 
+    const target = document.body.querySelector('#main-content');
+
     reserveButton.innerText = 'Reserve Your Table';
-    reserveButton.setAttribute('href', '');
+    reserveButton.setAttribute('href', '#');
     reserveButton.setAttribute('class', 'cs-button-solid');
+
+    reserveButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        contactsPageLoader(target);
+        changeButtonCover('menu', 'contacts')
+    });
 
     return reserveButton;
 }

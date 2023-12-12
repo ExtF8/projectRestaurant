@@ -45,8 +45,6 @@ pageNames.forEach((pageName) => {
             menuPageLoader(content);
         } else {
             contactsPageLoader(content);
-
-            console.log('contacts');
         }
     });
 });
