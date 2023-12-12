@@ -15,11 +15,18 @@ import {
     clearPage,
 } from '../utility/elementRender.js';
 
+// Import updateNavigationActiveState to update the active state of navigation buttons
+import { updateNavigationActiveState } from '../../index.js';
+
+// Import contactsPageLoader to navigate to contacts
+import contactsPageLoader from './contactsPageLoader.js';
+
 // Extracting the first item from menu contents to use as menu page content
 const MENU_PAGE_CONTENTS = menuContents[0];
 
 /**
  * Main function to load and display the menu page content
+ * @param {HTMLElement} content - The parent element where the menu page will be rendered
  */
 export default function menuPageLoader(content) {
     clearPage(content);
@@ -147,15 +154,23 @@ function renderHeadingContainer(itemData) {
 }
 
 /**
- * Creates a button for reserving a table
+ * Creates a button for reserving a table and navigating to contacts page
  * @returns {HTMLAnchorElement} - The reserve button element
  */
 function createReserveButton() {
     const reserveButton = document.createElement('a');
 
+    const target = document.body.querySelector('#main-content');
+
     reserveButton.innerText = 'Reserve Your Table';
-    reserveButton.setAttribute('href', '');
+    reserveButton.setAttribute('href', '#');
     reserveButton.setAttribute('class', 'cs-button-solid');
+
+    reserveButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        contactsPageLoader(target);
+        updateNavigationActiveState('contacts');
+    });
 
     return reserveButton;
 }

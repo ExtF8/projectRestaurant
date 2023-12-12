@@ -180,34 +180,27 @@ export function clearPage(parent) {
 }
 
 /**
- * Changes the active state between two button elements
- * @param {string} oldTab - The ID of the previously active tab/button
- * @param {string} newTab - The ID of the tab/button to be activated
- * @returns {string} - Returns the ID of the newly activated tab/button
+ * Creates a link (anchor) element with specified attributes and text content
+ * @param {string} href - The attribute name to set on the link (e.g., 'href')
+ * @param {string} hrefValue - The value for the href attribute
+ * @param {string} attributeName - the Name of the attribute (e.g., 'class')
+ * @param {string} attributeValue - The value for the attribute
+ * @param {string} text - The text content for the link
+ * @returns {HTMLAnchorElement} - The created anchor element
  */
-export function changeButtonCover(oldTab, newTab) {
-    let show = document.getElementById(`${oldTab}`);
-    let hide = document.getElementById(`${newTab}`);
-
-    show.classList.remove('cs-active');
-    hide.classList.add('cs-active');
-
-    return newTab;
-}
-
-/**
- * Creates a link (anchor) element with specified attributes and text content.
- * @param {string} attributeName - The attribute name to set on the link (e.g., 'href').
- * @param {string} attributeValue - The value for the attribute.
- * @param {string} className - The class attribute for the link.
- * @param {string} text - The text content for the link.
- * @returns {HTMLAnchorElement} - The created anchor element.
- */
-export function createLink(href, hrefValue, attributeName, attributeValue, text) {
+export function createLink(
+    href,
+    hrefValue,
+    attributeName,
+    attributeValue,
+    text
+) {
     const link = document.createElement('a');
+
     link.setAttribute(href, hrefValue);
     link.innerText = text;
     link.setAttribute(attributeName, attributeValue);
-    link.setAttribute('target', '_blank')
+    link.setAttribute('target', '_blank');
+
     return link;
 }

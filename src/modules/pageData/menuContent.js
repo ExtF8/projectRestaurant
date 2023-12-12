@@ -71,7 +71,7 @@ export let menuContents = [
             },
             listItemThree: {
                 info: {
-                    name: 'Curried Chicken Salad with Mango',
+                    name: 'Curried Chicken Salad',
                     price: '56€',
                     itemParagraph: `A refreshing mix of tender curried chicken and sweet
                     mango slices, tossed with vibrant greens for a light yet
@@ -98,7 +98,7 @@ export let menuContents = [
             },
             listItemFour: {
                 info: {
-                    name: `Meat Lovers' Sheet Pan Pizza`,
+                    name: `Meat Lovers' Pizza`,
                     price: '56€',
                     itemParagraph: `Loaded with an assortment of meats like pepperoni,
                     sausage, and bacon, this pizza offers a carnivore's
