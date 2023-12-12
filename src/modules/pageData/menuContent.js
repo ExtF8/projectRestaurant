@@ -1,9 +1,9 @@
-import burger from '../assets/img/menu/bisonBurger.png';
-import chicken from '../assets/img/menu/chickenSaladMango.png';
-import lasagna from '../assets/img/menu/lasagna.png';
-import pizza from '../assets/img/menu/meatLoversPizza.png';
-import sauce from '../assets/img/menu/pricklyPearPorkSauce.png';
-import tostada from '../assets/img/menu/purpleCornTostada.png';
+import burger from '../../assets/img/menu/bisonBurger.png';
+import chicken from '../../assets/img/menu/chickenSaladMango.png';
+import lasagna from '../../assets/img/menu/lasagna.png';
+import pizza from '../../assets/img/menu/meatLoversPizza.png';
+import sauce from '../../assets/img/menu/pricklyPearPorkSauce.png';
+import tostada from '../../assets/img/menu/purpleCornTostada.png';
 
 export let menuContents = [
     {

@@ -1,5 +1,5 @@
 // Importing menu contents data form menuContents module
-import { menuContents } from './menuContent.js';
+import { menuContents } from '../pageData/menuContent.js';
 
 // Importing utility functions from the 'elementRenderer' module. These functions are used
 // for creating various HTML elements dynamically
@@ -13,7 +13,7 @@ import {
     createTitle,
     createParagraph,
     clearPage,
-} from './elementRender.js';
+} from '../utility/elementRender.js';
 
 // Extracting the first item from menu contents to use as menu page content
 const MENU_PAGE_CONTENTS = menuContents[0];

@@ -4,15 +4,15 @@ import './styles/main.css';
 import './styles/dark.css';
 
 // Importing functionality modules
-import darkModeToggler from './modules/darkMode';
-import mobileNavigationToggling from './modules/mobileNavigation';
+import darkModeToggler from './modules/utility/darkMode.js';
+import mobileNavigationToggling from './modules/utility/mobileNavigation.js';
 
 // Importing page loader functions
-import homePageLoader from './modules/homePageLoader.js';
-import menuPageLoader from './modules/menuPageLoader.js';
+import homePageLoader from './modules/pageLoaders/homePageLoader.js';
+import menuPageLoader from './modules/pageLoaders/menuPageLoader.js';
 
 // Importing utility function for changing button appearance
-import { changeButtonCover } from './modules/elementRender.js';
+import { changeButtonCover } from './modules/utility/elementRender.js';
 
 // Activate dark mode toggle functionality
 darkModeToggler();

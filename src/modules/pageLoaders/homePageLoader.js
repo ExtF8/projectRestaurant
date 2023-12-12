@@ -1,5 +1,5 @@
 // Importing home contents data from homeContents module
-import { homeContents } from './homeContents';
+import { homeContents } from '../pageData/homeContents.js';
 
 // Importing utility functions from the 'elementRender' module. These functions are used
 // for creating various HTML elements dynamically
@@ -14,7 +14,7 @@ import {
     createTitle,
     createParagraph,
     clearPage,
-} from './elementRender.js';
+} from '../utility/elementRender.js';
 
 // Extracting the first item from home contents to use as home page content
 const HOME_PAGE_CONTENTS = homeContents[0];
