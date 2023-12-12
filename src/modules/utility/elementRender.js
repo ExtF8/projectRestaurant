@@ -194,3 +194,20 @@ export function changeButtonCover(oldTab, newTab) {
 
     return newTab;
 }
+
+/**
+ * Creates a link (anchor) element with specified attributes and text content.
+ * @param {string} attributeName - The attribute name to set on the link (e.g., 'href').
+ * @param {string} attributeValue - The value for the attribute.
+ * @param {string} className - The class attribute for the link.
+ * @param {string} text - The text content for the link.
+ * @returns {HTMLAnchorElement} - The created anchor element.
+ */
+export function createLink(href, hrefValue, attributeName, attributeValue, text) {
+    const link = document.createElement('a');
+    link.setAttribute(href, hrefValue);
+    link.innerText = text;
+    link.setAttribute(attributeName, attributeValue);
+    link.setAttribute('target', '_blank')
+    return link;
+}

@@ -10,6 +10,7 @@ import mobileNavigationToggling from './modules/utility/mobileNavigation.js';
 // Importing page loader functions
 import homePageLoader from './modules/pageLoaders/homePageLoader.js';
 import menuPageLoader from './modules/pageLoaders/menuPageLoader.js';
+import contactsPageLoader from './modules/pageLoaders/contactsPageLoader.js';
 
 // Importing utility function for changing button appearance
 import { changeButtonCover } from './modules/utility/elementRender.js';
@@ -43,6 +44,8 @@ pageNames.forEach((pageName) => {
         } else if (button.id == 'menu') {
             menuPageLoader(content);
         } else {
+            contactsPageLoader(content);
+
             console.log('contacts');
         }
     });
