@@ -180,26 +180,6 @@ export function clearPage(parent) {
 }
 
 /**
- * Changes the active state between two button elements
- * @param {string} oldTab - The ID of the previously active tab/button
- * @param {string} newTab - The ID of the tab/button to be activated
- * @returns {string} - Returns the ID of the newly activated tab/button
- */
-export function changeButtonCover(oldTab, newTab) {
-    let currentActive = document.getElementById(oldTab);
-    let newActive = document.getElementById(newTab);
-
-    if (currentActive) {
-        currentActive.classList.remove('cs-active');
-    }
-    if (newActive) {
-        newActive.classList.add('cs-active');
-    }
-
-    return newTab;
-}
-
-/**
  * Creates a link (anchor) element with specified attributes and text content
  * @param {string} href - The attribute name to set on the link (e.g., 'href')
  * @param {string} hrefValue - The value for the href attribute

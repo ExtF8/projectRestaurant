@@ -13,8 +13,13 @@ import {
     createTitle,
     createParagraph,
     clearPage,
-    changeButtonCover,
 } from '../utility/elementRender.js';
+
+// Import updateNavigationActiveState to update the active state of navigation buttons
+import { updateNavigationActiveState } from '../../index.js';
+
+// Import contactsPageLoader to navigate to contacts
+import contactsPageLoader from './contactsPageLoader.js';
 
 // Extracting the first item from menu contents to use as menu page content
 const MENU_PAGE_CONTENTS = menuContents[0];
@@ -149,7 +154,7 @@ function renderHeadingContainer(itemData) {
 }
 
 /**
- * Creates a button for reserving a table, navigating to contacts page
+ * Creates a button for reserving a table and navigating to contacts page
  * @returns {HTMLAnchorElement} - The reserve button element
  */
 function createReserveButton() {
@@ -164,7 +169,7 @@ function createReserveButton() {
     reserveButton.addEventListener('click', (event) => {
         event.preventDefault();
         contactsPageLoader(target);
-        changeButtonCover('menu', 'contacts')
+        updateNavigationActiveState('contacts');
     });
 
     return reserveButton;
