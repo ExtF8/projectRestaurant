@@ -1,3 +1,8 @@
+// Importing global, main, and dark mode CSS stylesheets
+import './styles/global.css';
+import './styles/main.css';
+import './styles/dark.css';
+
 // Importing functionality modules
 import darkModeToggler from './modules/utility/darkMode.js';
 import mobileNavigationToggling from './modules/utility/mobileNavigation.js';
