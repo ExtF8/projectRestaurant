@@ -1,15 +1,3 @@
-// Importing global, main, and dark mode CSS stylesheets
-import './styles/global.css';
-import './styles/main.css';
-import './styles/dark.css';
-
-import '../src/assets/img/favicons/android-chrome-192x192.png';
-import '../src/assets/img/favicons/android-chrome-512x512.png';
-import '../src/assets/img/favicons/apple-touch-icon.png';
-import '../src/assets/img/favicons/favicon-16x16.png';
-import '../src/assets/img/favicons/favicon-32x32.png';
-// import '../src/assets/img/favicons/favicon.ico';
-
 // Importing functionality modules
 import darkModeToggler from './modules/utility/darkMode.js';
 import mobileNavigationToggling from './modules/utility/mobileNavigation.js';
